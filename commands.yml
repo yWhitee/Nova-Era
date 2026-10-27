@@ -17,5 +17,7 @@ aliases:
   - kit open admin_inventory $sender
   mod:
   - kit open admin_moderacao_inventory $sender
+  moneytop:
+  - essentials:baltop $1-
   icanhasbukkit:
   - version $1-

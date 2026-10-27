@@ -62,5 +62,10 @@ groups:
     - menu
     - rtp
     - huskhomes:rtp
+    - money
+    - bal
+    - balance
+    - pay
+    - moneytop
     subcommands:
     - help about
