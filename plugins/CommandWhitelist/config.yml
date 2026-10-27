@@ -68,5 +68,6 @@ groups:
     - sell
     - shardsell
     - shardssell
+    - shop
     subcommands:
     - help about

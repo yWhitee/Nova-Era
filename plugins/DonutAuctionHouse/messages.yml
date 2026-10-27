@@ -1,0 +1,387 @@
+prefix: '&#9B4DE0&lMercado &8» '
+
+player-only: '&cSó jogadores podem usar este comando.'
+unknown-seller: Desconhecido
+
+command:
+  no-permission: '&cVocê não tem permissão para isso.'
+  no-permission-use: '&cVocê não tem permissão para usar o mercado.'
+  no-permission-sell: '&cVocê não tem permissão para vender itens.'
+  no-permission-reload: '&cVocê não tem permissão para recarregar o plugin.'
+  no-permission-fastbuy: '&cVocê não tem permissão para usar a compra rápida.'
+  no-permission-fastsell: '&cVocê não tem permissão para usar a venda rápida.'
+  usage-sell: '&cUso: /shop sell <preço> [auction]'
+  usage-auction: '&cUso: /shop auction <lance inicial>'
+  usage-view: '&cUso: /shop view <jogador>'
+  usage-open: '&cUso: /shop open <jogador> [browse|items|history|search <texto>]'
+  invalid-price: '&cPreço inválido.'
+  auctions-disabled: '&cVocê não pode iniciar leilões aqui; use /shop sell <preço>.'
+  config-reloaded: '&aConfiguração do mercado recarregada.'
+  limits-disabled: '&eOs limites de anúncios não estão ativados.'
+  limit-current: '&#9B4DE0Seu limite de anúncios: %limit%'
+  limit-listings: '&7Anúncios atuais: %count%'
+  limit-remaining: '&7Anúncios restantes: %remaining%'
+  unlimited: Ilimitado
+  fast-buy-toggle: '&eCompra rápida %state%&e.'
+  fast-sell-toggle: '&eVenda rápida %state%&e.'
+  state-enabled: '&aativada'
+  state-disabled: '&cdesativada'
+  search-prompt: '&eDigite no chat o nome do item, encantamento ou jogador. Digite &#9B4DE0cancelar &epara voltar.'
+  input-timeout: '&7Sem resposta, nada foi alterado.'
+  cancel-word: cancelar
+  auction-limit-reached: '&cVocê atingiu seu limite de %limit% anúncios.'
+  no-listings-from: '&c%player% não tem nada à venda.'
+  player-offline: '&c%player% não está online.'
+  price-disabled: '&cA consulta de preços está desativada no servidor.'
+  price-failed: '&cNão foi possível carregar os preços agora.'
+  price-header: '&#9B4DE0Preço de mercado de %item%&#9B4DE0:'
+  price-average: ' &7Média: &#9B4DE0%price% &7cada &8(%sales% vendas em %days% dias)'
+  price-range: ' &7Faixa: &#9B4DE0%low% &7- &#9B4DE0%high% &7cada'
+  price-stack: ' &7Sua pilha de %amount%: cerca de &#9B4DE0%price%'
+  price-none: ' &7Nenhuma venda nos últimos %days% dias.'
+  price-lowest: ' &7Mais barato à venda agora: &#9B4DE0%price% &7cada &8(%count% anunciados)'
+  help:
+    - '&#9B4DE0&lMercado &8- &7comandos'
+    - ' &e/shop &8- &7abrir o mercado'
+    - ' &e/shop sell <preço> &8- &7vender o item na mão (&f1k&7, &f2.5k &7e &f1m &7funcionam)'
+    - ' &e/shop auction <lance inicial> &8- &7leiloar o item na mão'
+    - ' &e/shop search <texto> &8- &7buscar por nome, encantamento ou vendedor'
+    - ' &e/shop view <jogador> &8- &7ver os anúncios de um jogador'
+    - ' &e/shop price &8- &7preços recentes do item na mão'
+    - ' &e/shop collect &8- &7seus anúncios e itens para coletar'
+    - ' &e/shop history &8- &7suas compras e vendas'
+
+admin:
+  not-active: '&cEsse anúncio não está à venda.'
+  removed: '&aRemovido %item% &ade &e%seller%&a. O item foi para a coleta dele.'
+  failed: '&cNão foi possível remover o anúncio: %error%'
+  bad-id: '&cIsso não é um ID de anúncio.'
+  usage-view: '&cUso: /shop admin view <jogador> (no jogo)'
+  usage-remove: '&cUso: /shop admin remove <id do anúncio>'
+  usage-purge: '&cUso: /shop admin purge <dias>  (apaga o histórico mais antigo que isso)'
+  purged: '&a%count% registro(s) com mais de %days% dias apagados.'
+  info-header: '&#9B4DE0DonutAuctionHouse %version%'
+  info-storage: ' &7Armazenamento: &f%storage% &8| &7Linhas em cache: &f%rows%'
+  info-active: ' &7Anúncios ativos: &f%count%'
+  info-unreadable: ' &7Linhas ilegíveis: &f%count% &8(itens de uma versão mais nova do Minecraft)'
+  info-server: ' &7Servidor: &f%server%'
+  help:
+    - '&#9B4DE0&lMercado &8- &7comandos da staff'
+    - ' &e/shop admin view <jogador> &8- &7ver e remover anúncios de um jogador'
+    - ' &e/shop admin remove <id> &8- &7remover um anúncio (o item vai para a coleta do vendedor)'
+    - ' &e/shop admin info &8- &7armazenamento e estado'
+    - ' &e/shop admin purge <dias> &8- &7apagar histórico antigo'
+    - ' &e/shop open <jogador> [browse|items|history|search <texto>] &8- &7abrir um menu para um jogador'
+    - ' &e/shop reload &8- &7recarregar config.yml e messages.yml'
+    - ' &7Shift + botão direito num anúncio do /shop remove ele.'
+
+restrictions:
+  world: '&cO mercado não pode ser usado neste mundo.'
+  gamemode: '&cVocê não pode anunciar itens no modo %gamemode%.'
+  cooldown: '&cEspere %seconds%s para anunciar de novo.'
+  blacklisted: '&cEsse item não pode ser vendido no mercado.'
+
+service:
+  hold-item: '&cSegure na mão o item que quer anunciar.'
+  invalid-item: '&cItem inválido.'
+  price-below-min: '&cO preço mínimo é &#9B4DE0%min_price%&c.'
+  price-above-max: '&cO preço máximo para esse item é &#9B4DE0%max_price%&c.'
+  price-invalid: '&cO preço deve ser maior que 0 e abaixo do limite.'
+  sell-confirmation-invalid: '&cEssa confirmação de venda não é mais válida.'
+  listing-blocked: '&cVocê não pode anunciar esse item agora.'
+  fee-insufficient: '&cAnunciar custa uma taxa de &#9B4DE0%fee%&c.'
+  fee-paid: ' &7(taxa %fee%)'
+  listed: '&aAnunciado &f%amount%x %item% &apor &#9B4DE0%price%&a.'
+  listed-auction: '&aSeu leilão de &f%amount%x %item% &acomeçou em &#9B4DE0%price%&a.'
+  relisted: '&a%item% &aanunciado de novo por &#9B4DE0%price%&a.'
+  create-failed: '&cFalha ao criar o anúncio. Seu item foi devolvido.'
+  auction-unavailable: '&cEsse anúncio não está mais disponível.'
+  cannot-buy-own: '&cVocê não pode comprar seu próprio anúncio.'
+  place-a-bid: '&cEsse item está em leilão. Dê um lance.'
+  auction-expired: '&cEsse anúncio expirou.'
+  auction-processing: '&cEsse anúncio já está sendo processado.'
+  purchase-blocked: '&cVocê não pode comprar isso agora.'
+  insufficient-funds: '&cVocê não tem shards suficientes.'
+  withdraw-failed: '&cNão foi possível retirar os shards: %error%'
+  pay-seller-failed: '&cNão foi possível pagar o vendedor agora.'
+  purchased: '&aComprado &f%amount%x %item% &apor &#9B4DE0%price%&a.'
+  purchased-to-collection: '&aComprado &f%amount%x %item% &apor &#9B4DE0%price%&a. Seu inventário está cheio, o item espera em &e/shop collect&a.'
+  purchase-completed: '&aCompra concluída.'
+  purchase-failed: '&cA compra falhou. Seus shards foram devolvidos.'
+  cannot-bid-own: '&cVocê não pode dar lance no seu próprio leilão.'
+  already-leading: '&eVocê já tem o maior lance.'
+  bid-too-low: '&cO próximo lance deve ser de pelo menos &#9B4DE0%min_bid%&c.'
+  bid-blocked: '&cVocê não pode dar lance nisso agora.'
+  bid-placed: '&aVocê deu um lance de &#9B4DE0%bid% &aem %item%&a. Você tem o maior lance.'
+  bid-extended: ' &7(O leilão foi prorrogado.)'
+  bid-outdated: '&cAlguém deu um lance antes. Seus shards foram devolvidos; veja o novo preço e tente de novo.'
+  auction-not-found: '&cAnúncio não encontrado.'
+  only-active-cancel: '&cSó anúncios ativos podem ser cancelados.'
+  cannot-cancel-bids: '&cUm leilão com lances não pode ser cancelado.'
+  cancelled: '&aAnúncio cancelado e item devolvido.'
+  cancelled-to-collection: '&aAnúncio cancelado. Seu inventário está cheio, o item espera em &e/shop collect&a.'
+  cancel-failed: '&cFalha ao cancelar o anúncio. Tente de novo.'
+  already-collected: '&cEsse anúncio já foi coletado.'
+  sale-collected: '&aVenda marcada como coletada. O pagamento já foi feito no momento da compra.'
+  collection-update-failed: '&cNão foi possível atualizar a coleta.'
+  collection-update-failed-retry: '&cNão foi possível atualizar a coleta. Tente de novo.'
+  item-returned: '&aSeu item não vendido foi devolvido.'
+  delivered: '&aColetado %item%&a.'
+  nothing-to-collect: '&cNada para coletar nesse anúncio.'
+  inventory-full: '&cLibere espaço no inventário primeiro.'
+  inventory-full-left: '&eSeu inventário está cheio. %count% item(s) ainda esperam aqui.'
+
+notify:
+  sold: '&a✔ &fSeu %item% &7x%amount% &ffoi vendido para &e%buyer% &fpor &#9B4DE0%price%&f.%tax_note%'
+  tax-note: ' &7(taxa %tax%)'
+  sold-title: '<#9B4DE0><bold>ITEM VENDIDO</bold>'
+  sold-subtitle: '%item% &7por &#9B4DE0%price%'
+  outbid: '&e⚠ &fSeu lance em %item% &ffoi superado: agora está em &#9B4DE0%bid%&f. Seus &#9B4DE0%refund% &fforam devolvidos.'
+  bid-returned: '&eO leilão de %item% &efoi removido pela staff. Seu lance de &#9B4DE0%refund% &efoi devolvido.'
+  new-bid: '&a%bidder% &7deu um lance de &#9B4DE0%bid% &7no seu %item%&7.'
+  won: '&a★ &fVocê ganhou %item% &fpor &#9B4DE0%price%&f! Ele espera em &e/shop collect&f.'
+  expired: '&7Seu %item% &7não foi vendido. Pegue de volta com &e/shop collect&7.'
+  removed: '&cUm membro da staff removeu seu %item%&c. Pegue de volta com &e/shop collect&c.'
+  summary-header: '&#9B4DE0Enquanto você estava fora, &e%count% &#9B4DE0itens seus foram vendidos por &#9B4DE0%total%&#9B4DE0:'
+  summary-line: ' &8• &f%item% &7x%amount% &8→ &e%buyer% &7por &#9B4DE0%price%'
+  summary-more: ' &8• &7e mais %count% em &e/shop history'
+  waiting: '&eVocê tem &#9B4DE0%count% &eitem(s) esperando em &#9B4DE0/shop collect&e.'
+  delivered: '&a%count% item(s) do mercado foram adicionados ao seu inventário.'
+
+broadcast:
+  new-listing: '&8[&#9B4DE0Mercado&8] &e%seller% &7anunciou &f%amount%x %item% &7por &#9B4DE0%price%&7. &e/shop'
+  new-auction: '&8[&#9B4DE0Mercado&8] &e%seller% &7iniciou um leilão de &f%amount%x %item% &7a partir de &#9B4DE0%price%&7. &e/shop'
+
+status:
+  active: Ativo
+  sold: Vendido
+  expired: Expirado
+  cancelled: Cancelado
+  line:
+    active: '&fStatus: Ativo'
+    sold: '&aStatus: Vendido'
+    expired: '&cStatus: Expirado'
+    cancelled: '&cStatus: Cancelado'
+
+sort:
+  recently-listed: Mais recentes
+  latest: Terminando logo
+  lowest-price: Menor preço
+  highest-price: Maior preço
+  lowest-unit-price: Menor preço por unidade
+
+filter:
+  categories:
+    all: Todos
+    blocks: Blocos
+    tools: Ferramentas
+    food: Comida
+    combat: Combate
+    potions: Poções
+    books: Livros
+    ingredients: Ingredientes
+    utilities: Utilidades
+  types:
+    all: Tudo
+    buy-now: Compra direta
+    auctions: Leilões
+  filter-lore: Filtrar anúncios
+  clear-name: '&cLimpar filtro'
+  clear-lore: Mostrar todos os anúncios
+  type-name: '&eTipo de anúncio'
+  type-lore: '&eClique para alternar entre tudo, compra direta e leilões'
+
+duration:
+  1-hour: 1 hora
+  6-hours: 6 horas
+  12-hours: 12 horas
+  1-day: 1 dia
+  2-days: 2 dias
+  3-days: 3 dias
+  1-week: 1 semana
+
+gui:
+  history:
+    entry: '&eHistórico'
+    entry-lore: Veja suas compras e vendas concluídas
+    title: '&#9B4DE0Histórico'
+    bought: Comprado
+    sold: Vendido
+    refresh: '&eAtualizar histórico'
+    count: '%count% transações concluídas'
+    loading: Carregando histórico...
+    empty: Nenhuma transação concluída
+    error: Não foi possível carregar o histórico. Clique em Atualizar.
+    unavailable-item: Detalhes do item indisponíveis
+    price: '&7Preço: &#9B4DE0%price%'
+    tax: '&7Taxa: &c%tax% &8(você recebeu %net%)'
+    auction: '&dGanho em leilão'
+    date: '&7Data: &f%date%'
+    seller: '&7Vendedor: &f%name%'
+    buyer: '&7Comprador: &f%name%'
+    id: '&8Transação: %id%'
+    read-only: '&8Transação concluída - só leitura'
+  common:
+    cancel: '&cCancelar'
+    selected: '&aSelecionado'
+    click-to-select: Clique para selecionar
+    back-to-auction: '&eVoltar ao mercado'
+    back-to-auction-lore: Voltar para os anúncios
+    previous-page: '&ePágina anterior'
+    next-page: '&ePróxima página'
+    go-back: Voltar
+    no-previous-page: Não há página anterior
+    open-next-page: Abrir próxima página
+    no-more-listings: Não há mais anúncios
+    page-indicator: 'Página: %page%/%pages%'
+    results-count: '%count% anúncios'
+    current-none: 'Atual: nenhum'
+    current-value: 'Atual: %value%'
+    step: 'Passo: %step%'
+    duration-label: 'Duração: %duration%'
+    click-adjust-price: Clique em +/- para ajustar
+    preview-prefix: 'Prévia: '
+
+  titles:
+    auction: '&#9B4DE0Mercado'
+    seller: '&#9B4DE0Mercado • %seller%'
+    filter: '&#9B4DE0Mercado • Filtro'
+    your-items: '&#9B4DE0Mercado • Seus itens'
+    admin-items: '&cStaff • %player%'
+    confirm-purchase: '&#9B4DE0Confirmar compra'
+    sell: '&#9B4DE0Vender item'
+    sell-auction: '&#9B4DE0Iniciar leilão'
+    bid: '&#9B4DE0Dar um lance'
+
+  auction:
+    price-sort: '&eOrdenar'
+    sort-option: '&7  %mode%'
+    sort-selected: '&a▶ %mode%'
+    click-cycle-sort: '&eClique para mudar a ordem'
+    filter: '&eFiltro'
+    type-value: 'Mostrando: %value%'
+    click-change-category: '&eClique para mudar a categoria'
+    refresh-name: '&#9B4DE0Mercado'
+    refresh-lore: '&eClique para atualizar'
+    search: '&eBuscar'
+    seller-filter: 'Vendedor: %seller%'
+    type-item-name: '&eClique para buscar por nome, encantamento ou vendedor'
+    search-clear: '&7Botão direito para limpar'
+    your-items: '&eSeus itens'
+    your-items-lore: Veja seus anúncios e colete itens
+    your-items-count: 'Ativos: %active%/%limit%'
+    your-items-waiting: '&a%count% item(s) para coletar'
+    sell-held-item: '&aVender item na mão'
+    sell-held-lore: Anuncia o item da sua mão principal
+    sell-held-hint: Usa seu último preço de venda quando disponível
+    next-page-lore-available: Abrir a próxima página
+    empty: '&7Nada à venda ainda'
+    empty-lore: Segure um item e use /shop sell <preço>
+    no-results: '&cNada encontrado'
+    no-results-lore: Limpe a busca ou o filtro para ver tudo
+
+  sell:
+    decrease-price: '&cDiminuir preço'
+    increase-price: '&aAumentar preço'
+    shift-step: '&7Shift + clique: %step%'
+    price-display: '&#9B4DE0Preço: %price%'
+    starting-bid-display: '&#9B4DE0Lance inicial: %price%'
+    type-price: '&eClique para digitar um preço exato (1k, 2.5k...)'
+    price-prompt: '&eDigite o preço no chat (por exemplo &#9B4DE0250&e, &#9B4DE01.5k &eou &#9B4DE02m&e). Digite &#9B4DE0cancelar &epara voltar.'
+    price-out-of-range: '&cO preço deve estar entre &#9B4DE0%min% &ce &#9B4DE0%max%&c.'
+    confirm-listing: '&aConfirmar anúncio'
+    list-for-price: Anunciar este item por %price%
+    start-at-price: Começar o leilão em %price%
+    fee-line: '&7Taxa de anúncio: &c%fee%'
+    cancel-lore: Voltar sem anunciar
+    type-bin: '&aCompra direta'
+    type-bin-lore: O comprador paga seu preço na hora
+    type-auction: '&#9B4DE0Leilão'
+    type-auction-lore: Começa no seu preço; o maior lance leva
+    type-switch: '&eClique para trocar'
+    insight: '&bConsulta de preço'
+    insight-disabled: '&7A consulta de preço está desativada'
+    insight-sales: '&7Vendidos nos últimos %days% dias: &f%sales%'
+    insight-average: '&7Média: &#9B4DE0%price% &7cada'
+    insight-range: '&7Faixa: &f%low% &7- &f%high%'
+    insight-last: '&7Última venda: &f%price% &7cada'
+    insight-none: '&7Nenhuma venda recente deste item'
+    insight-lowest: '&7Mais barato à venda: &#9B4DE0%price% &7cada'
+    insight-yours: '&7Seu preço: &e%price% &7cada'
+    fees: '&eTaxas e ganhos'
+    fees-listing: '&7Taxa de anúncio: &f%fee%'
+    fees-tax: '&7Taxa de venda: &f%percent%%'
+    fees-receive: '&7Você recebe: &#9B4DE0%amount%'
+    fees-receive-bid: '&7Você recebe: &#9B4DE0pelo menos %amount%'
+    free: Grátis
+
+  bid:
+    minimum: '&eLance de %price%'
+    raise: '&eLance de %price% &7(+10%)'
+    big-raise: '&eLance de %price% &7(+25%)'
+    click: '&aClique para dar o lance'
+    custom: '&eValor personalizado'
+    custom-lore: Digite qualquer valor de pelo menos %price%
+    prompt: '&eDigite seu lance no chat (por exemplo &#9B4DE01500 &eou &#9B4DE02.5k&e). Digite &#9B4DE0cancelar &epara voltar.'
+    how: '&bComo funcionam os lances'
+    how-1: Seu lance fica guardado até ser superado
+    how-2: Se alguém superar seu lance, ele é devolvido na hora
+    how-3: Lances no final prorrogam o leilão em %seconds%s
+    how-4: O vencedor coleta o item em /shop collect
+
+  confirm-purchase:
+    confirm: '&aConfirmar compra'
+    click-to-buy: Clique para comprar este item
+    cancel-lore: Voltar ao mercado
+    item-price: '&#9B4DE0Preço: %price%'
+    after: '&7Saldo depois: &f%balance%'
+    cannot-afford: '&cVocê não tem shards suficientes'
+
+  your-items:
+    empty: '&7Nenhum anúncio ainda'
+    empty-lore: Segure um item e use /shop sell <preço>
+    collect-all: '&aColetar tudo'
+    collect-all-lore: Pega todos os itens que cabem (%count%)
+    collected: '&a%count% item(s) coletados.'
+    summary: '&bSeu comércio'
+    summary-active: '&7Anúncios ativos: &f%active%/%limit%'
+    summary-sold: '&7Itens vendidos: &f%count% &8(%amount%)'
+    summary-bought: '&7Itens comprados: &f%count% &8(%amount%)'
+
+  listing-lore:
+    separator: '&8————————————————'
+    price: '&7Preço: &#9B4DE0%price%'
+    price-each: '&8(%price% cada)'
+    starting-bid: '&7Lance inicial: &#9B4DE0%price%'
+    current-bid: '&7Lance atual: &#9B4DE0%price% &8(%bids% lances)'
+    current-bid-single: '&7Lance atual: &#9B4DE0%price% &8(1 lance)'
+    top-bidder: '&7Maior lance: &f%bidder%'
+    min-bid: '&7Próximo lance: &e%price%'
+    seller: '&7Vendedor: &f%seller%'
+    expires-in: '&7Expira em: &f%time%'
+    ends-in: '&7Termina em: &f%time%'
+    contents: '&bConteúdo: %count% itens'
+    preview-hint: '&8Botão direito para ver o conteúdo'
+    click-purchase: '&aClique para comprar.'
+    click-bid: '&aClique para dar um lance'
+    leading: '&aVocê tem o maior lance'
+    own-listing: '&eEste é o seu anúncio'
+    admin-remove: '&cShift + botão direito para remover (staff)'
+    admin-click-remove: '&cClique para remover (staff)'
+    time-remaining: '&7Tempo restante: &f%time%'
+    status: '&7Status: %status%'
+    has-bids: '&7Leilões com lances não podem ser cancelados'
+    bought-for: '&aComprado por &#9B4DE0%price%'
+    won-for: '&aGanho por &#9B4DE0%price%'
+    action-collect: '&eClique para coletar'
+    action-cancel: '&aClique para cancelar o anúncio.'
+    action-collect-proceeds: '&aClique para marcar os ganhos como coletados.'
+    action-reclaim: '&aClique para pegar o item de volta.'
+    action-relist: '&eBotão direito para anunciar de novo por %price%'
+    action-already-collected: '&7Já coletado.'
+    balance: '&bSeu saldo: %balance%'
+
+update:
+  available: '&eUma versão nova do DonutAuction está disponível.'
+  up-to-date: '&aO DonutAuctionHouse está atualizado.'
+  version-line: '&7Atual: %current%  Mais nova: %latest%'
