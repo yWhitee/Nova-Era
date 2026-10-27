@@ -1,0 +1,64 @@
+
+# Messages use MiniMessage formatting (https://docs.adventure.kyori.net/minimessage/format)
+messages:
+  prefix: '> '
+  command_denied: Comando inválido.
+  subcommand_denied: Não pode usar esse comando
+  no_permission: <red>Você não tem permissão para isso.
+  no_such_subcommand: <red>No subcommand by that name.
+  config_reloaded: <yellow>Configuration reloaded.
+  added_to_whitelist: <yellow>Whitelisted command <gold>%s <yellow>for permission
+    <gold>%s
+  removed_from_whitelist: <yellow>Removed command <gold>%s <yellow>from permission
+    <gold>%s
+  group_doesnt_exist: <red>Group doesn't exist or error occured
+
+# Do not enable if you don't have issues with aliased commands.
+# This requires server restart to take effect.
+use_protocollib: false
+
+# Valid message types are CHAT and ACTIONBAR and CHAT_AND_ACTIONBAR.
+message_type: CHAT
+command_denied_sound:
+  enabled: false
+  key: entity.villager.no
+  volume: 1.0
+  pitch: 1.0
+groups:
+  default:
+    commands:
+    - msg
+    - tpdeny
+    - tpa
+    - tpahere
+    - tpaccept
+    - g
+    - l
+    - homes
+    - home
+    - sethome
+    - delhome
+    - bounty
+    - tpahere
+    - tpignore
+    - tpno
+    - tpoffline
+    - tpyes
+    - huskhomes:tpignore
+    - huskhomes:tpa
+    - huskhomes:tpahere
+    - huskhomes:tpaccept
+    - huskhomes:tpdeny
+    - huskhomes:tpignore
+    - huskhomes:tpno
+    - huskhomes:tpyes
+    - huskhomes:tpoffline
+    - login
+    - logar
+    - mudarsenha
+    - changepassword
+    - spawn
+    - kits
+    - kit
+    subcommands:
+    - help about

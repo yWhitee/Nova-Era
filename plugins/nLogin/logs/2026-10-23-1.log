@@ -1,0 +1,39 @@
+[2026/10/23 17:41:10 INFO]:           __             _       
+[2026/10/23 17:41:10 INFO]:   _ __   / /  ___   __ _(_)_ __  
+[2026/10/23 17:41:10 INFO]:  | '_ \ / /  / _ \ / _` | | '_ \ 
+[2026/10/23 17:41:10 INFO]:  | | | / /__| (_) | (_| | | | | |
+[2026/10/23 17:41:10 INFO]:  |_| |_\____/\___/ \__, |_|_| |_|
+[2026/10/23 17:41:10 INFO]:                   |___/            
+[2026/10/23 17:41:10 INFO]:  By: www.nickuc.com - V 2.0.24
+[2026/10/23 17:41:10 INFO]:  
+[2026/10/23 17:41:10 DEBUG]: The config.yml file was created successfully.
+[2026/10/23 17:41:10 DEBUG]: Loading the messages_br.yml message file...
+[2026/10/23 17:41:10 DEBUG]: Messages were loaded in 31 ms (single file).
+[2026/10/23 17:41:10 WARN]: The "unsupported-settings.perform-username-validation" option is enabled in config/paper-global.yml
+[2026/10/23 17:41:10 WARN]: The username-appender feature may fail with an invalid nickname kick message.
+[2026/10/23 17:41:10 DEBUG]: Settings were loaded in 69 ms.
+[2026/10/23 17:41:10 DEBUG]: Loading database...
+[2026/10/23 17:41:10 INFO]: Gerando par de chaves RSA... (isso pode demorar um pouco)
+[2026/10/23 17:41:10 INFO]: O par de chaves RSA foi gerado com sucesso. Demorou 0.17s
+[2026/10/23 17:41:10 DEBUG]: Starting logger filter...
+[2026/10/23 17:41:10 INFO]: Loading packetevents-spigot 2.14.0-SNAPSHOT...
+[2026/10/23 17:41:17 INFO]: 
+[2026/10/23 17:41:17 INFO]:  Muito obrigado por escolher o nLogin! :)
+[2026/10/23 17:41:17 INFO]: 
+[2026/10/23 17:41:17 INFO]:  Para sua segurança, leia a mensagem abaixo:
+[2026/10/23 17:41:17 INFO]:   Nunca baixe o nLogin de fontes desconhecidas.
+[2026/10/23 17:41:17 INFO]:   Uma versão modificada pode conter softwares maliciosos.
+[2026/10/23 17:41:17 INFO]: 
+[2026/10/23 17:41:17 INFO]:  Sites confiáveis:
+[2026/10/23 17:41:17 INFO]:   Website: nickuc.com
+[2026/10/23 17:41:17 INFO]:   GitHub: github.com/nickuc-com
+[2026/10/23 17:41:17 INFO]:   Instalador do OpeNLogin (do Spigot ou GitHub)
+[2026/10/23 17:41:17 INFO]: 
+[2026/10/23 17:41:17 INFO]:  Suporte oficial:
+[2026/10/23 17:41:17 INFO]:   Documentação: docs.nickuc.com/nlogin/
+[2026/10/23 17:41:17 INFO]:   Discord: nickuc.com/discord
+[2026/10/23 17:41:17 INFO]:   Email: support@nickuc.com
+[2026/10/23 17:41:17 INFO]: 
+[2026/10/23 17:41:34 DEBUG]: [SQLite] [UPDATE]: "INSERT INTO `nlogin` (`last_name`, `unique_id`, `mojang_id`, `bedrock_id`, `password`, `last_ip`, `creation_date`, `last_seen`, `email`, `discord`, `settings`) VALUES ('andreBDO', d8dc9f7fd59f43f2965960b5e35afd9e, d8dc9f7fd59f43f2965960b5e35afd9e, null, null, '179.227.143.209', '2026-10-23 17:41:34.468', '2026-10-23 17:41:34.468', null, null, '{"settings":[{"value":true,"key":"force-register-commands"},{"value":true,"key":"force-register-spawn"}],"version":0}')" (applied to all columns)
+[2026/10/23 17:41:39 DEBUG]: Loading the messages_br.yml message file...
+[2026/10/23 17:45:22 INFO]: Successful plugin core shutdown (took 0.00s)

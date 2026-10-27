@@ -1,0 +1,36 @@
+
+dono:
+  tabprefix: "&#23FF0C&lD&#5FFC0F&lO&#9CF913&lN&#D8F616&lO &8┃ &f"
+  tagprefix: "&#23FF0C&lD&#5FFC0F&lO&#9CF913&lN&#D8F616&lO &8┃ &f"
+
+dev:
+  tabprefix: "&#FF0000&lD&#FF8080&lE&#FFFFFF&lV &8┃ &f"
+  tagprefix: "&#FF0000&lD&#FF8080&lE&#FFFFFF&lV &8┃ &f"
+
+vip:
+  tabprefix: "&#00FF88&lVIP &8┃ &f"
+  tagprefix: "&#00FF88&lVIP &8┃ &f"
+
+vipplus:
+  tabprefix: "&#FFD700&lVIP+ &8┃ &f"
+  tagprefix: "&#FFD700&lVIP+ &8┃ &f"
+
+vipplusplus:
+  tabprefix: "&#FF3030&lVIP++ &8┃ &f"
+  tagprefix: "&#FF3030&lVIP++ &8┃ &f"
+  
+_DEFAULT_:
+  tabprefix: ""
+  tagprefix: ""
+  customtabname: "%player%"
+  tabsuffix: ""
+  tagsuffix: ""
+
+per-world:
+  world1:
+    Owner:
+      tabprefix: "&4&l[Dono] &c"
+      tagprefix: "&4&l[Dono] &c"
+    dono:
+      tabprefix: "&4&l[Dono] &c"
+      tagprefix: "&4&l[Dono] &c"

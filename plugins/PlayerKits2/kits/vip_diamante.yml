@@ -1,0 +1,75 @@
+cooldown: 172800
+permission_required: true
+
+items:
+  1:
+    id: DIAMOND_PICKAXE
+    amount: 1
+    enchants:
+      - "EFFICIENCY;5"
+      - "UNBREAKING;3"
+      - "FORTUNE;3"
+  2:
+    id: DIAMOND_PICKAXE
+    amount: 1
+    enchants:
+      - "EFFICIENCY;4"
+      - "UNBREAKING;3"
+      - "SILK_TOUCH;1"
+  3:
+    id: DIAMOND_SHOVEL
+    amount: 1
+    enchants:
+      - "EFFICIENCY;5"
+      - "UNBREAKING;3"
+  4:
+    id: TORCH
+    amount: 64
+  5:
+    id: COOKED_BEEF
+    amount: 64
+  6:
+    id: GOLDEN_CARROT
+    amount: 32
+
+display:
+  default:
+    id: DIAMOND
+    name: "&b&lVIP Diamante"
+    lore:
+      - '&fEste kit inclui:'
+      - '&8- &7Picareta Eficiência V + Fortuna III'
+      - '&8- &7Picareta Eficiência IV + Toque suave'
+      - '&8- &7Pá de diamante Eficiência V'
+      - '&8- &7x64 Tochas, x64 Carnes, x32 Cenouras douradas'
+      - ' '
+      - '&7Cooldown: &c2 dias'
+      - ''
+      - '&aClique esquerdo para pegar!'
+      - '&bClique direito para visualizar!'
+    item_flags:
+      - HIDE_ATTRIBUTES
+  no_permission:
+    id: BARRIER
+    name: "&b&lVIP Diamante"
+    lore:
+      - '&cEste kit é exclusivo para quem'
+      - '&ctem este nível de VIP.'
+      - '&7Veja os níveis no Discord, canal vips.'
+  cooldown:
+    id: DIAMOND
+    name: "&b&lVIP Diamante"
+    lore:
+      - '&cEspere &7%time%'
+      - '&cpara pegar este kit novamente.'
+    item_flags:
+      - HIDE_ATTRIBUTES
+actions:
+  claim:
+    1:
+      action: "playsound: BLOCK_NOTE_BLOCK_PLING;10;2"
+    2:
+      action: "message: &aVocê pegou o kit &b&lVIP Diamante"
+  error:
+    1:
+      action: "playsound: BLOCK_NOTE_BLOCK_PLING;10;0.1"

@@ -1,0 +1,358 @@
+# +--------------------------------------------------------------------------+ #
+# <                     Arquivo de configuração do PvPManager                        > #
+# <--------------------------------------------------------------------------> #
+# <                  For help with the config options go to                  > #
+# <            https://www.spigotmc.org/threads/pvpmanager.25420/            > #
+# <                  or Discord https://discord.gg/w7gyBuw                   > #
+# +--------------------------------------------------------------------------+ #
+
+General Settings:
+  # Altera o idioma; para ver todas as opções, use '/pmr locale' dentro do jogo
+  Locale: EN
+  # Define se o plugin usará equipes, necessárias para alterar nomes acima dos jogadores e outras funções. Desative se houver conflitos com outros plugins
+  Use Scoreboard Teams: true
+  # Lista de mundos nos quais o PvPManager não terá efeito
+  World Exclusions:
+    - 'example'
+
+######################
+####  Combat Tag  ####
+######################
+Combat Tag:
+  Enabled: true
+  # Duração do estado de combate, em segundos
+  Time: 15
+  # Faz o jogador brilhar enquanto estiver marcado em combate (Minecraft 1.9+)
+  Glowing: true
+  # Remove a marcação de combate quando o jogador matar seus inimigos atuais
+  Untag On Kill: false
+  # Permite que os jogadores se marquem em combate usando arco, pérola do Ender etc.
+  Self Tag: false
+  # Se ativado, renova a marcação de combate quando o jogador lança uma pérola do Ender
+  EnderPearl Renews Tag: true
+  # Se ativado, renova a marcação de combate quando o jogador usa uma carga de vento
+  WindCharge Renews Tag: true
+  # Fecha automaticamente o inventário e o chat do jogador quando ele entra em combate
+  Close Inventory On Tag: true
+
+  # Permite uma luta justa entre dois jogadores marcados em combate, sem interferência de terceiros
+  # Útil para modos cada um por si (FFA) ou PvP em massa
+  Duel Mode: false
+  
+  Display:
+    # Adiciona um prefixo ou sufixo ao nome do jogador enquanto ele estiver em combate
+    Nametags:
+      Enabled: true
+      # Escolha o prefixo do nome do jogador enquanto estiver marcado; '&c', por exemplo, apenas deixa o nome vermelho
+      # O plugin TAB é necessário para usar variáveis no nome do jogador
+      Prefix: '&4⚔ &8(&7%pvpmanager_combat_timeleft%s&8) &c'
+      Suffix: ' &f%pvpmanager_player_health%&c❤'
+    Action Bar:
+      Enabled: true
+      # Você pode usar qualquer variável do PlaceholderAPI aqui
+      Message: '&8[&c&lCOMBATE&8] &7<time>s &8• &a<barsLeft>&#AA5555<barsPassed> &8• &7%pvpmanager_current_enemy% &8(&c%pvpmanager_current_enemy_health%❤&8)'
+      # Símbolo usado na barra de progresso e quantidade de repetições. Outros símbolos: ▊, ▮, ▯, |
+      Symbol: '▊'
+      Total Bars: 20
+    Boss Bar:
+      Enabled: true
+      # Você pode usar qualquer variável do PlaceholderAPI aqui
+      Message: '&8&l[&c&lCOMBATE&8&l] &e&l<time> segundos'
+      # Consulte aqui as opções de cor da barra - https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarColor.html
+      BarColor: RED
+      # Consulte aqui as opções de estilo da barra - https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarStyle.html
+      BarStyle: SOLID
+  
+  # Nesta seção, escolha quais ações serão bloqueadas durante o combate
+  Actions Blocked:
+    EnderPearls: false
+    ChorusFruits: false
+    Teleport: true
+    # Bloqueia mais tipos de teletransporte, não apenas comandos. Pode entrar em conflito com alguns plugins
+    Unsafe Teleports: false
+    Eat: false
+    Totem of Undying: false
+    Place Blocks: false
+    Break Blocks: false
+    Open Inventory: false
+    Elytra:
+      # Impede que os jogadores planem com élitros durante o combate; remove o élitro se tentarem planar repetidamente
+      Block Gliding: false
+      # Impede o uso de fogos de artifício enquanto o jogador plana em combate
+      Block Fireworks: false
+      # Maximum firework power level allowed while in combat (-1 = no limit, 1-3 = max power)
+      Firework Power Limit: -1
+      # Tempo de recarga, em segundos, entre usos de fogos durante o voo em combate (-1 = desativado)
+      Firework Cooldown: 2
+    Interact:
+      Enabled: false
+      # Lista de materiais cuja interação será bloqueada. Adicionar DOOR inclui materiais terminados em DOOR, como IRON_DOOR
+      # Also blocks physical interactions, having PRESSURE_PLATE also allows blocking the activation of pressure plates
+      List:
+        - 'DOOR'
+        - 'FENCE_GATE'
+        - 'BUTTON'
+        - 'BED'
+        - 'PRESSURE_PLATE'
+        - 'SLAB'
+        - 'STAIRS'
+        - 'CARPET'
+    # A lista de permissões de comandos é recursiva: permitir 'tell' também permite 'tell' com qualquer quantidade de argumentos
+    Commands:
+      Enabled: true
+      Whitelist: true
+      Command List:
+        - 'tell'
+        - 'msg'
+        - 'combattag'
+
+##################################
+####  Combat Log Punishments  ####
+##################################
+Combat Log Punishments:
+  # Dinheiro perdido ao sair durante o combate. Valores menores ou iguais a 1 podem representar porcentagens: 0.05 = 5%, 1 = 100% (0 desativa)
+  Money Penalty: 0.0
+  # Define se o jogador será morto ao sair e quais itens deixará cair
+  Kill on Logout:
+    Enabled: true
+    Player Drops:
+      Inventory: true
+      Experience: true
+      Armor: true
+  # Aplica a punição mesmo se o jogador for expulso por outro plugin ou por um administrador
+  Punish On Kick:
+    Enabled: true
+    # Se Match Kick Reason estiver ativado, a punição só será aplicada se o motivo da expulsão corresponder à lista abaixo
+    Match Kick Reason: false
+    Kick Reasons:
+      - 'Kicked for spamming'
+      - 'disconnect.spam'
+  # Lista de comandos executados quando alguém sai durante o combate. Use '{player}' para o nome do jogador
+  # Você pode usar o comando 'announce' para anunciar a mensagem no servidor. Adicione outros comandos ou apague a linha para desativar
+  Commands On Combat Log:
+    - 'announce {prefix} #f09a11{player} #ed5e26tried to escape combat!'
+
+######################
+####  PvP Toggle  ####
+######################
+# Configura o recurso de ativar/desativar PvP: /pvp ou /pvptoggle
+PvP Toggle:
+  # Mantenha como true, a menos que queira desativar o PvP para novos jogadores
+  Default PvP: true
+  # Quantos segundos devem passar até que o jogador possa usar o comando novamente
+  Cooldown: 15
+  # Prefixo ou sufixo do jogador quando o PvP estiver ativado/desativado
+  # Deixe um deles vazio ('') para desativar um dos elementos do nome, ou defina 'Enabled' como false para desativar ambos
+  NameTags:
+    Enabled: false
+    Prefix On: '&4PvP On ⚔ '
+    Prefix Off: '&2PvP Off ⚔ '
+  # Esta configuração cobra uma taxa por hora de cada jogador com o PvP desativado. É um sistema simplificado 
+  # Ele não acompanha há quanto tempo o PvP está desativado. Use 0 para desativar
+  PvP Disabled Money Fee: 0
+  # Command list to execute on PvP toggle, use '{player}' for player name
+  Commands PvP On:
+    - 'examplecommand {player} turned pvp on'
+  Commands PvP Off:
+    - 'examplecommand {player} turned pvp off'
+  # O PvP Toggle é ativado à força ao atacar em regiões do WorldGuard com a flag pvp definida como ALLOW
+  # Para limitar isso a regiões específicas, defina WorldGuard Overrides como false e use a flag pvp-protection como DENY
+  WorldGuard Overrides: true
+
+###############################
+####  Anti Border Hopping  ####
+###############################
+# Aqui você escolhe como impedir que jogadores escapem de combate entrando em áreas seguras
+# Isso ocorre quando um jogador entra em combate e tenta fugir para uma zona segura
+# Barreiras físicas, como vidro vermelho ao redor de uma região, estão disponíveis apenas na versão Premium para Minecraft 1.13+
+Anti Border Hopping:
+  # Mantém os jogadores vulneráveis ao PvP dentro de zonas seguras
+  Vulnerable:
+    Enabled: true
+    # Define se a marcação de combate é renovada ao lutar em uma zona segura. Funciona apenas com WorldGuard
+    Renew Combat Tag: true
+  # Empurra os jogadores para trás quando tentam entrar em uma zona segura
+  Push Back:
+    Enabled: true
+    # Força do empurrão (mínimo 0.1 e máximo 4)
+    Force: 1.2
+    # Remove o élitro do espaço do peitoral e coloca-o no inventário do jogador
+    Remove Elytra: false
+
+#############################
+####  Newbie Protection  ####
+#############################
+# Novos jogadores devem receber proteção contra PvP? Para desativá-la, podem usar /newbie disable
+Newbie Protection:
+  Enabled: false
+  # Duração da proteção para novatos, em segundos. Ela permanece após reinicializações
+  Time: 180
+  # Define se os jogadores podem remover a proteção usando /newbie disable
+  Allow Player Disable: true
+  # Impede os jogadores protegidos de pegar itens ou colocar blocos
+  Block Pick Items: false
+  Block Place Blocks: false
+  Block Break Blocks: false
+  # Protege novatos de todos os tipos de dano, inclusive PvE; funciona basicamente como modo deus
+  Protect From Everything: false
+  # Exibe uma barra de chefe com o tempo restante da proteção para novatos
+  Boss Bar:
+    Enabled: true
+    # Mensagem exibida na barra. Use a variável <time> para o tempo restante (formatado automaticamente como min:seg)
+    Message: '&6✦ &a&lProteção de Novato &6✦ &e&l<time>'
+    # Consulte aqui as opções de cor da barra - https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarColor.html
+    BarColor: GREEN
+    # Consulte aqui as opções de estilo da barra - https://hub.spigotmc.org/javadocs/spigot/org/bukkit/boss/BarStyle.html
+    BarStyle: SOLID
+  Command Blacklist:
+    - 'examplecommand'
+
+#####################
+####  Cooldowns  ####
+#####################
+# Aqui você pode definir o tempo de recarga, em segundos, de qualquer item, como maçãs douradas e maçãs douradas encantadas
+# Você pode adicionar outros tipos de materiais usando esta lista: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+# Se o item não for comestível, a recarga será ativada apenas ao clicar com o botão direito
+# A seção Combat aplica recargas apenas durante o combate; Global aplica recargas o tempo todo
+# Você pode desativar a recarga padrão do Minecraft definindo 0, como para pérolas do Ender, ou usar -1 para a recarga padrão
+# You can also specify an item data value using `NAME-DATA`, e.g. `WOOL-14` for red wool or `POTION-16421` for a legacy potion.
+# Em versões antigas do servidor, `ENCHANTED_GOLDEN_APPLE` será convertido automaticamente para `GOLDEN_APPLE-1`.
+Item Cooldowns:
+  Combat:
+    ENDER_PEARL: 5
+    WIND_CHARGE: 1
+    GOLDEN_APPLE: 30
+    ENCHANTED_GOLDEN_APPLE: 60
+  Global:
+    GOLDEN_APPLE: 30
+    ENCHANTED_GOLDEN_APPLE: 60
+
+########################
+####  Player Kills  ####
+########################
+# Configurações acionadas quando um jogador mata outro
+Player Kills:
+  # Dinheiro recebido como recompensa. Valores menores ou iguais a 1 podem representar porcentagens: 0.05 = 5%, 1 = 100% (0 desativa)
+  Money Reward: 0.0
+  # Dinheiro perdido ao morrer em PvP. Valores menores ou iguais a 1 podem representar porcentagens: 0.1 = 10%, 1 = 100% (0 desativa)
+  Money Penalty: 0.0
+  # Define se a recompensa em dinheiro será retirada do jogador morto
+  Money Steal: false
+  # Permite receber uma porcentagem da experiência do jogador morto; 1 = 100% (0 desativa)
+  Exp Steal: 0.0
+  Commands On Kill:
+    # Tempo, em segundos, entre comandos de abate; -1 desativa a recarga
+    Cooldown: -1
+    # Comandos executados ao matar ({player} é quem matou, {victim} é a vítima e {item} é o material do item na mão)
+    Commands:
+      - 'examplecommand {player} killed {victim} with {item}'
+  # Comandos executados ao renascer (<player> é o jogador que está renascendo)
+  Commands On Respawn:
+    - 'examplecommand {player} respawned after dying in PvP combat'
+  # Regiões do WorldGuard nas quais recompensas, punições e comandos não serão executados
+  WorldGuard Exclusions:
+    - 'exampleregion'
+    
+  # Impede abusos, como matar repetidamente o mesmo jogador para subir de posição ou atrapalhar outros
+  # Example - If a player X kills player Y more than 5 times under the time limit, it executes the commands defined (kick, jail, etc)
+  Anti Kill Abuse:
+    Enabled: true
+    Max Kills: 5
+    Time Limit: 20
+    # Warn the player 1 kill before they are punished with the commands
+    Warn Before: true
+    # As variáveis disponíveis são {player} e {victim}
+    Commands on Abuse:
+      - 'kick {player} &cKill Abuse Is Not Allowed!'
+    # Após renascer, por quantos segundos o jogador ficará protegido (0 desativa)
+    Respawn Protection: 3
+
+##########################
+####  Other Settings  ####
+##########################
+Other Settings:
+  # Ativa partículas de sangue ao acertar jogadores em PvP
+  PvP Blood: true
+  # Ignora golpes de bolas de neve, ovos, vara de pesca e outros
+  Ignore No Damage Hits: true
+  # Exibe mensagens de proteção (PvP desativado, proteção de novato etc.) na barra de ação em vez do chat
+  Protection Messages to Action Bar: true
+  # Modo de itens ao morrer: define o que acontece com os itens e a experiência do jogador
+  # As opções são 'ALWAYS' (o PvPManager não interfere; recurso desativado, geralmente melhor para evitar conflitos com plugins de baús de morte),
+  # modo 'DROP' (jogadores deixam cair itens ao morrer em PvP, mas não em PvE),
+  # modo 'KEEP' (jogadores mantêm os itens ao morrer em PvP, mas não em PvE),
+  # modo 'TRANSFER' (igual a 'DROP', mas transfere os itens, exceto experiência, diretamente para o inventário de quem matou)
+  # modo 'CLEAR' (apaga todos os itens e a experiência ao morrer; isso EXCLUI tudo, então confirme que é o desejado)
+  Player Drop Mode: ALWAYS
+  # Mostra a vida do jogador; usa placares e pode entrar em conflito com outros plugins
+  Show health under name:
+    Enabled: true
+    Display Name: '&c❤'
+
+# O que deve ser desativado quando um jogador entra em PvP
+Disable On Hit:
+  Fly: false
+  # Define se o voo será restaurado após o combate. Use false se houver itens que concedam voo temporário
+  Restore Fly: true
+  # Qualquer modo de jogo diferente de Sobrevivência será desativado
+  GameMode: false
+  # Disfarces do LibsDisguises
+  Disguise: true
+  # Modo deus do Essentials ou CMI (na versão Premium)
+  GodMode: true
+  # Faz o jogador cair se entrar em combate enquanto plana com élitros
+  Elytra: false
+  # Poções de invisibilidade; o padrão é false, pois esse é um recurso original do Minecraft
+  Invisibility: false
+
+Database:
+  # Tipo de banco de dados. Bancos compatíveis: SQLite ou MySQL
+  Type: SQLite
+  # Preencha esta seção apenas se estiver usando MySQL
+  MySQL:
+    Host: 127.0.0.1
+    Port: 3306
+    Username: root
+    Password: '12345'
+    Database: minecraft
+
+# Formatação de valores booleanos do PlaceholderAPI
+Placeholders:
+  Boolean Format:
+    True: '#6fc93e✓'
+    False: '#c9453e✗'
+
+# Define se o PvPManager pode verificar atualizações e avisar sobre elas
+# Auto Update - After checking should the update be downloaded automatically for you?
+Update Check:
+  Enabled: true
+  Auto Update: true
+
+Metrics:
+  Opt-out: false
+  
+# Poções consideradas nocivas; os jogadores serão marcados em combate e protegidos contra elas
+# See list here https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionEffectType.html
+Harmful Potions:
+  - SLOW
+  - SLOWNESS # SLOW 1.20.5+
+  - SLOW_DIGGING
+  - MINING_FATIGUE # SLOW_DIGGING 1.20.5+
+  - CONFUSION
+  - NAUSEA # CONFUSION 1.20.5+
+  - BLINDNESS
+  - HUNGER
+  - WEAKNESS
+  - POISON
+  - WITHER
+  - GLOWING
+  - LEVITATION
+  - UNLUCK
+  - BAD_OMEN
+  - INFESTED
+
+Debug Mode: false
+
+# Informa ao PvPManager se a configuração foi atualizada. Não altere, a menos que queira redefinir a configuração
+Config Version: 207
+Database Version: 1

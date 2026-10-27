@@ -1,0 +1,64 @@
+cooldown: 86400
+permission_required: true
+
+items:
+  1:
+    id: IRON_PICKAXE
+    amount: 1
+    enchants:
+      - "EFFICIENCY;3"
+      - "UNBREAKING;2"
+  2:
+    id: IRON_SHOVEL
+    amount: 1
+    enchants:
+      - "EFFICIENCY;2"
+      - "UNBREAKING;2"
+  3:
+    id: TORCH
+    amount: 64
+  4:
+    id: COOKED_BEEF
+    amount: 32
+
+display:
+  default:
+    id: IRON_INGOT
+    name: "&7&lVIP Ferro"
+    lore:
+      - '&fEste kit inclui:'
+      - '&8- &7Picareta de ferro Eficiência III'
+      - '&8- &7Pá de ferro Eficiência II'
+      - '&8- &7x64 Tochas'
+      - '&8- &7x32 Carnes assadas'
+      - ' '
+      - '&7Cooldown: &c1 dia'
+      - ''
+      - '&aClique esquerdo para pegar!'
+      - '&bClique direito para visualizar!'
+    item_flags:
+      - HIDE_ATTRIBUTES
+  no_permission:
+    id: BARRIER
+    name: "&7&lVIP Ferro"
+    lore:
+      - '&cEste kit é exclusivo para quem'
+      - '&ctem este nível de VIP.'
+      - '&7Veja os níveis no Discord, canal vips.'
+  cooldown:
+    id: IRON_INGOT
+    name: "&7&lVIP Ferro"
+    lore:
+      - '&cEspere &7%time%'
+      - '&cpara pegar este kit novamente.'
+    item_flags:
+      - HIDE_ATTRIBUTES
+actions:
+  claim:
+    1:
+      action: "playsound: BLOCK_NOTE_BLOCK_PLING;10;2"
+    2:
+      action: "message: &aVocê pegou o kit &7&lVIP Ferro"
+  error:
+    1:
+      action: "playsound: BLOCK_NOTE_BLOCK_PLING;10;0.1"

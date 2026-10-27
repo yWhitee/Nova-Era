@@ -1,0 +1,56 @@
+
+cooldown: 10800
+items:
+  1:
+    id: LEATHER_HELMET
+    amount: 1
+  2:
+    id: LEATHER_CHESTPLATE
+    amount: 1
+  3:
+    id: LEATHER_LEGGINGS
+    amount: 1
+  4:
+    id: LEATHER_BOOTS
+    amount: 1
+  5:
+    id: STONE_SWORD
+    amount: 1
+  6:
+    id: GOLDEN_APPLE
+    amount: 2
+  7:
+    id: COOKED_BEEF
+    amount: 16
+display:
+  default:
+    id: CHEST
+    name: '&f&lKit Inicial'
+    lore:
+      - '&fEste kit inclui:'
+      - '&8- &7Armadura completa de couro'
+      - '&8- &7Espada de pedra'
+      - '&8- &7x2 Maçãs douradas'
+      - '&8- &7x16 Carnes assadas'
+      - ' '
+      - '&7Cooldown: &c3 horas'
+      - ''
+      - '&aClique esquerdo para pegar!'
+      - '&bClique direito para visualizar!'
+    item_flags:
+      - HIDE_ATTRIBUTES
+  cooldown:
+    id: CHEST
+    name: "&f&lKit Inicial"
+    lore:
+      - '&cEspere &7%time%'
+      - '&cpara pegar este kit novamente.'
+    item_flags:
+      - HIDE_ATTRIBUTES
+actions:
+  claim:
+    1:
+      action: "playsound: BLOCK_NOTE_BLOCK_PLING;10;2"
+  error:
+    1:
+      action: "playsound: BLOCK_NOTE_BLOCK_PLING;10;0.1"

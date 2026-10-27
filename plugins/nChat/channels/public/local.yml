@@ -1,0 +1,67 @@
+commands:
+- l
+permission: nchat.channel.local
+distance: 50.0
+delay-message: 0
+loggable: false
+mentionable: false
+highlight: false
+prevent-capslock: true
+format:
+  default: '&e[{channel_logo}] &f{clan_tag} {faction_fulltag} {prefix} {bprefix2}
+    {bprefix} {sender} {bsuffix} {suffix}&e: {message}'
+  spy: ''
+balance:
+  min-balance: 0.0
+  message-cost: 0.0
+  show-message-cost: false
+proxy:
+  enabled: false
+  servers: []
+tags:
+  channel_logo:
+    hover: '&7Canal: &f{channel}'
+    suggest: '/{channel_cmd} '
+  sender:
+    hover: |-
+      &7Clique aqui para mencionar este jogador.
+
+      &7Coins: &2$&f{balance}
+    suggest: '/{channel_cmd} {sender}, '
+  message:
+    hover: '&7Data de envio: &f{data}'
+    suggest: ''
+  prefix:
+    hover: '&7Cargo: &f{prefix}'
+    suggest: ''
+  magnata:
+    hover: '&7Magnata do servidor.'
+    suggest: /money {sender}
+  faction_fulltag:
+    hover: |-
+      &7Nome da facção: &f{faction_name}
+      &7Posição: &f{faction_role}
+    suggest: ''
+  faction_tag:
+    hover: |-
+      &7Nome da facção: &f{faction_name}
+      &7Posição: &f{faction_role}
+    suggest: ''
+  clan_tag:
+    hover: '&7Nome do clan: &f{clan_name}'
+    suggest: ''
+  killer:
+    hover: '&7Vencedor do evento killer.'
+    suggest: ''
+  displayname:
+    hover: '&7Jogador: &f{sender}'
+    suggest: ''
+  custom_tag:
+    text: '&b[NickUC.com]'
+    hover: '&7Clique aqui para acessar o website.'
+    url: https://www.nickuc.com
+    permission: nchat.tag.admin
+  custom_tag2:
+    text: '&a[$]'
+    hover: '&7Clique aqui para ver o saldo de {sender}.'
+    command: /money {sender}

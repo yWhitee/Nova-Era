@@ -1,0 +1,265 @@
+####################################################################################################
+# +----------------------------------------------------------------------------------------------+ #
+# |                                          ___ _           _                                   | #
+# |                                  _ __   / __\ |__   __ _| |_                                 | #
+# |                                 | '_ \ / /  | '_ \ / _` | __|                                | #
+# |                                 | | | / /___| | | | (_| | |_                                 | #
+# |                                 |_| |_\____/|_| |_|\__,_|\__|                                | #
+# |                                                                                              | #
+# |                             Um plugin de chat simples e otimizado.                           | #
+# |                                                                                              | #
+# |                                © 2026 - Powered by nickuc.com                                | #
+# |                                                                                              | #
+# |                                                                                              | #
+# |  Para um melhor entendimento deste arquivo acesse nossa documentação:                        | #
+# |   ==> https://docs.nickuc.com/nchat/                                                         | #
+# |                                                                                              | #
+# |  Novas opções não são adicionadas automaticamente neste arquivo. Valores padrões são usados  | #
+# |  caso uma opção não seja encontrada.                                                         | #
+# +----------------------------------------------------------------------------------------------+ #
+####################################################################################################
+
+# Define o idioma do plugin.
+#
+# - Traduções disponíveis:
+#
+#  |=> Português (brasileiro): messages_br.yml
+#  |=> Tcheco: messages_cz.yml
+#  |=> Inglês: messages_en.yml
+#  |=> Italiano: messages_it.yml
+#  |=> Polonês: messages_pl.yml
+#
+lang: 'messages_br.yml'
+
+#      ___      _        _
+#     /   \__ _| |_ __ _| |__   __ _ ___  ___
+#    / /\ / _` | __/ _` | '_ \ / _` / __|/ _ \
+#   / /_// (_| | || (_| | |_) | (_| \__ \  __/
+#  /___,' \__,_|\__\__,_|_.__/ \__,_|___/\___|
+
+# Configurações do banco de dados.
+database:
+  # Define o tipo de banco de dados usado.
+  #
+  # - Opções disponíveis:
+  #  |=> MariaDB
+  #  |=> MySQL
+  #  |=> SQLite
+  type: SQLite
+
+  remote:
+    # Define as informações do MariaDB/MySQL.
+    # - Tutorial para instalação: https://docs.nickuc.com/nlogin/mysql
+    hostname: "localhost:3306"
+    database: "nchat"
+    username: "root"
+    password: ""
+
+    # Define as propriedades da conexão.
+    # - Não altere esta informação se você não sabe o que está fazendo!
+    properties:
+      #useSSL: false
+      #sslMode: disable
+      #verifyServerCertificate: false
+      useUnicode: true
+      characterEncoding: "utf8"
+
+  # Define as configurações da pool de conexões.
+  # - Não altere esta informação se você não sabe o que está fazendo!
+  pool-settings:
+    maximum-pool-size: 10
+    minimum-idle: 10
+    maximum-lifetime: 1800000 # 30 minutos
+    connection-timeout: 5000 # 5 segundos
+
+#     ___ _                            _
+#    / __\ |__   __ _ _ __  _ __   ___| |
+#   / /  | '_ \ / _` | '_ \| '_ \ / _ \ |
+#  / /___| | | | (_| | | | | | | |  __/ |
+#  \____/|_| |_|\__,_|_| |_|_| |_|\___|_|
+#
+
+# Configurações relacionadas aos canais.
+channel:
+  # Define se o jogador deve ser avisado se ninguém receber a mensagem enviada.
+  show-no-hear-message: true
+
+  # Define se ao ignorar um jogador as mensagens devem ser escondidas em canais globais.
+  # - Se esta opção for desativada, apenas mensagens privadas e menções serão desativadas.
+  ignore-global-messages: true
+
+  # Define se o comando do canal quando executado sem nenhuma mensagem deverá ter o comportamento do comando "/focus".
+  use-channel-command-to-focus: true
+
+  # Define os canais padrões do plugin.
+  # - Para desativar o canal padrão, deixe o valor vazio ('').
+  #
+  # ==> Você também pode definir um canal padrão com base no mundo.
+  #     (!) Este recurso é exclusivo para usuários premium.
+  #
+  #    - Exemplos:
+  #       world_the_end: "global"
+  #       world_nether: "global"
+  #
+  per-world:
+    default: "local"
+
+#     _       _                               _
+#    /_\   __| |_   ____ _ _ __   ___ ___  __| |
+#   //_\\ / _` \ \ / / _` | '_ \ / __/ _ \/ _` |
+#  /  _  \ (_| |\ V / (_| | | | | (_|  __/ (_| |
+#  \_/ \_/\__,_| \_/ \__,_|_| |_|\___\___|\__,_|
+#
+
+# Configurações avançadas.
+advanced:
+  # Define se os eventos do chat devem ser chamados de forma assíncrona.
+  # - Apenas desative esta opção se algum plugin não funcionar corretamente.
+  async-chat: true
+
+  # Define se os eventos de chat com formato modificado deverão ser ignorados pelo nChat.
+  # - Pode ser útil ativar esta opção se algum plugin que formata o chat não estiver funcionando.
+  ignore-modified-chat-events: false
+
+  # Define se o modo espião deve ser ativado automaticamente ao entrar.
+  spy-on-join: false
+
+  # Define se o tell do nChat será ativado.
+  # - Se preferir usar outro plugin para mensagens privadas, desative a opção abaixo.
+  #
+  #  (!) É necessário reiniciar o servidor para aplicar esta opção.
+  #
+  use-nchat-tell: true
+
+  # Define se o ignorar do nChat será ativado.
+  #
+  #  (!) É necessário reiniciar o servidor para aplicar esta opção.
+  #
+  use-nchat-ignore: true
+
+  # Define se o nChat usará a biblioteca de chat legada (md_5).
+  # - Pode ser útil ativar esta opção se você estiver tendo problemas de formatação da mensagem.
+  use-legacy-chat-library: false
+
+#     __            _
+#    /__\ ___ _ __ | | __ _  ___ ___ _ __
+#   / \/// _ \ '_ \| |/ _` |/ __/ _ \ '__|
+#  / _  \  __/ |_) | | (_| | (_|  __/ |
+#  \/ \_/\___| .__/|_|\__,_|\___\___|_|
+#            |_|
+
+# Configurações do sistema de substituição de mensagens.
+replace-messages:
+  # Define se o recurso de substituição de mensagens deve ser ativado.
+  enable: true
+
+  # Define se todos os jogadores deverão ter suas mensagens substituídas.
+  enable-by-default: true
+
+  # Define se as mensagens deverão começar com letra maíscula e conter o ponto final.
+  # - Permissão para a correção de mensagens: {PERMISSÃO DO CANAL}.fix-message
+  fix-message: true
+
+  # Define se todos os jogadores deverão ter suas mensagens corrigidas.
+  fix-message-by-default: true
+
+  # Define as regras de substituição.
+  # - Lista de emojis: https://hypixel.net/threads/%E3%83%84symbols%E2%98%BB.787483/
+  replacers:
+    - "vc,voce,vose,ce->você"
+    - "nois->nós"
+    - "nao->não"
+    - "tmb,tbm->também"
+    - "viajem->viagem"
+    - "viagar->viajar"
+    - "encima,emcima->em cima"
+    - ":christmas:,:natal:->☃"
+    - ":star:,:estrela:->★"
+    - ":music:,:musica:->♪"
+    - ":virus:->☣"
+    - ":urss:->☭"
+    - "<3,s2,S2->❤"
+    - ":smile:->◕‿◕"
+
+#     ___                _            _
+#    / __\__ _ _ __  ___| | ___   ___| | __
+#   / /  / _` | '_ \/ __| |/ _ \ / __| |/ /
+#  / /__| (_| | |_) \__ \ | (_) | (__|   <
+#  \____/\__,_| .__/|___/_|\___/ \___|_|\_\
+#             |_|
+
+# Configurações do capslock.
+capslock:
+  # Define se o anti-capslock deverá ser usado.
+  enable: true
+
+  # Define o tamanho mínimo das mensagens analisadas.
+  min-length: 4
+
+  # Define a porcentagem de capslock permitida nas mensagens.
+  percentage: 25
+
+  # Define as palavras que não sofrerão a remoção do capslock.
+  #
+  # - Tipos:
+  #  - [CS]: caso sensitivo => diferencia letras maiúsculas/minúsculas.
+  #  - [CI]: caso insensitivo => não diferencia letras maiúsculas/minúsculas.
+  skip-words:
+    - '[CI]VIP'
+    - '[CI]VIP+'
+    - '[CS]Master'
+
+#     ___
+#    / __\___ _ __  ___  ___  _ __
+#   / /  / _ \ '_ \/ __|/ _ \| '__|
+#  / /__|  __/ | | \__ \ (_) | |
+#  \____/\___|_| |_|___/\___/|_|
+
+# Configurações de censura de domínios ou trechos de mensagens.
+censor:
+  # Define se o plugin fingirá que a mensagem foi enviada no chat quando o sistema de censura for acionado.
+  # - Se esta opção for desativada, uma mensagem de bloqueio será enviada.
+  spoof-send: true
+
+  advertising:
+    # Define se URLs serão proibídas em mensagens.
+    enable: true
+
+    # Define o comando usado para a punição de anúncios.
+    punishment-command: "/mute @player Divulgando no servidor."
+
+    # Define se as mensagens serão concatenadas durante o processamento.
+    # - Por exemplo, se a mensagem for "nickuc .com" ou "nickuc. com", o domínio "nickuc.com" será detectado.
+    should-concatenate: false
+
+    # Define a lista de URLs permitidas.
+    # - Os domínios inseridos deverão respeitar os seguintes limites da ICANN.
+    #
+    # - Regras da ICANN:
+    #  - ter no mínimo 3 e no máximo 63 caracteres;
+    #  - começar com uma letra ou número e finalizar com uma letra ou número;
+    #  - respeitar o conjunto de caracteres válidos: letras (a-z, A-Z), números (0-9) e/ou traços (-);
+    #
+    allowed-domains:
+      - 'youtube.com'
+      - 'youtu.be'
+      - 'discord.com'
+      - 'discord.gg'
+      - 'nickuc.com'
+      - 'hastebin.com'
+      - 'imgur.com'
+      - 'prntscr.com'
+      - 'prnt.scr'
+
+  other:
+    # Define o trecho de mensagens que serão bloqueados.
+    #
+    #  (!) Durante o processamento...
+    #   - as palavras serão concatenadas para evitar "bypass".
+    #   - apenas o conjunto de caracteres padrão (a-zA-Z0-9) e de caracteres da mensagem bloqueada serão considerados.
+    #
+    #    * Exemplo: se o trecho "ataque bot" for bloqueado, mensagens como
+    #      "ataque.bot", "at.aque,bo!t" e "a,t.a.q,ue b,o.t" serão bloqueadas.
+    #
+    blocked-content:
+      - 'ip:'

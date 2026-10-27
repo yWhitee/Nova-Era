@@ -1,0 +1,19 @@
+[2026/10/23 18:51:06 INFO]:           __             _       
+[2026/10/23 18:51:06 INFO]:   _ __   / /  ___   __ _(_)_ __  
+[2026/10/23 18:51:06 INFO]:  | '_ \ / /  / _ \ / _` | | '_ \ 
+[2026/10/23 18:51:06 INFO]:  | | | / /__| (_) | (_| | | | | |
+[2026/10/23 18:51:06 INFO]:  |_| |_\____/\___/ \__, |_|_| |_|
+[2026/10/23 18:51:06 INFO]:                   |___/            
+[2026/10/23 18:51:06 INFO]:  By: www.nickuc.com - V 2.0.24
+[2026/10/23 18:51:06 INFO]:  
+[2026/10/23 18:51:06 DEBUG]: Loading the messages_br.yml message file...
+[2026/10/23 18:51:06 DEBUG]: Messages were loaded in 33 ms (single file).
+[2026/10/23 18:51:06 WARN]: The "unsupported-settings.perform-username-validation" option is enabled in config/paper-global.yml
+[2026/10/23 18:51:06 WARN]: The username-appender feature may fail with an invalid nickname kick message.
+[2026/10/23 18:51:06 DEBUG]: Settings were loaded in 55 ms.
+[2026/10/23 18:51:06 DEBUG]: Loading database...
+[2026/10/23 18:51:06 DEBUG]: Starting logger filter...
+[2026/10/23 18:51:06 INFO]: Loading packetevents-spigot 2.14.0-SNAPSHOT...
+[2026/10/23 18:53:06 DEBUG]: [SQLite] [UPDATE]: "UPDATE `nlogin` SET `last_name` = 'brenobatata', `unique_id` = f63dbb496b5145ff98ccb76172cef152,  `mojang_id` = f63dbb496b5145ff98ccb76172cef152,  `bedrock_id` = null,  `password` = '$argon2id$v=19$m=32768,t=5,p=1$ZesL0Uh7b8rR+3TD/3oPbw$KogrGb6Nnss1darI1sKaGLg2Nb2l1HUluUlhGAfofiA', `last_ip` = '187.2.122.117', `creation_date` = 2026-10-23 17:52:55.768, `last_seen` = 2026-10-23 18:53:06.525, `email` = null, `discord` = null, `settings` = '{"settings":[{"value":"pt","key":"language"}],"version":0}' WHERE `ai` = 2" (applied to [last_ip, last_seen, settings] columns)
+[2026/10/23 18:53:06 INFO]: O usuário brenobatata se autenticou com sucesso.
+[2026/10/23 18:57:29 INFO]: Successful plugin core shutdown (took 0.00s)

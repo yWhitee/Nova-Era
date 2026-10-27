@@ -1,0 +1,95 @@
+cooldown: 86400
+permission_required: true
+
+items:
+  1:
+    id: DIAMOND_SWORD
+    amount: 1
+    enchants:
+      - "SHARPNESS;3"
+      - "UNBREAKING;3"
+      - "FIRE_ASPECT;1"
+  2:
+    id: DIAMOND_PICKAXE
+    amount: 1
+    enchants:
+      - "EFFICIENCY;4"
+      - "UNBREAKING;3"
+  3:
+    id: DIAMOND_AXE
+    amount: 1
+    enchants:
+      - "EFFICIENCY;3"
+      - "UNBREAKING;2"
+  4:
+    id: DIAMOND_HELMET
+    amount: 1
+    enchants:
+      - "PROTECTION;3"
+      - "UNBREAKING;2"
+  5:
+    id: DIAMOND_CHESTPLATE
+    amount: 1
+    enchants:
+      - "PROTECTION;3"
+      - "UNBREAKING;2"
+  6:
+    id: DIAMOND_LEGGINGS
+    amount: 1
+    enchants:
+      - "PROTECTION;3"
+      - "UNBREAKING;2"
+  7:
+    id: DIAMOND_BOOTS
+    amount: 1
+    enchants:
+      - "PROTECTION;3"
+      - "UNBREAKING;2"
+      - "FEATHER_FALLING;3"
+  8:
+    id: GOLDEN_APPLE
+    amount: 16
+  9:
+    id: ENDER_PEARL
+    amount: 8
+  10:
+    id: GOLDEN_CARROT
+    amount: 32
+
+display:
+  default:
+    id: GOLD_INGOT
+    name: "&a&lVIP+"
+    amount: 1
+    lore:
+      - "&7Kit exclusivo VIP+"
+      - ""
+      - "&fEspada e ferramentas melhoradas"
+      - "&fArmadura de diamante encantada"
+      - "&f16 Maçãs Douradas"
+      - ""
+      - "&7Cooldown: &f24 horas"
+      - ""
+      - "&aClique para resgatar!"
+    item_flags:
+      - HIDE_ATTRIBUTES
+
+  no_permission:
+    id: BARRIER
+    name: "&c&lVIP+"
+    amount: 1
+    lore:
+      - "&cVocê precisa do VIP+."
+
+  cooldown:
+    id: CLOCK
+    name: "&e&lVIP+"
+    amount: 1
+    lore:
+      - "&cAguarde: &f%time%"
+      - "&7para resgatar novamente."
+
+actions:
+  claim:
+    1:
+      action: "playsound: UI_TOAST_CHALLENGE_COMPLETE;10;1"

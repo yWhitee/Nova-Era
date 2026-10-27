@@ -1,0 +1,68 @@
+cooldown: 86400
+permission_required: true
+
+items:
+  1:
+    id: DIAMOND_PICKAXE
+    amount: 1
+    enchants:
+      - "EFFICIENCY;4"
+      - "UNBREAKING;3"
+  2:
+    id: DIAMOND_SHOVEL
+    amount: 1
+    enchants:
+      - "EFFICIENCY;3"
+      - "UNBREAKING;2"
+  3:
+    id: TORCH
+    amount: 64
+  4:
+    id: COOKED_BEEF
+    amount: 48
+  5:
+    id: GOLDEN_CARROT
+    amount: 16
+
+display:
+  default:
+    id: GOLD_INGOT
+    name: "&6&lVIP Ouro"
+    lore:
+      - '&fEste kit inclui:'
+      - '&8- &7Picareta de diamante Eficiência IV'
+      - '&8- &7Pá de diamante Eficiência III'
+      - '&8- &7x64 Tochas'
+      - '&8- &7x48 Carnes assadas'
+      - '&8- &7x16 Cenouras douradas'
+      - ' '
+      - '&7Cooldown: &c1 dia'
+      - ''
+      - '&aClique esquerdo para pegar!'
+      - '&bClique direito para visualizar!'
+    item_flags:
+      - HIDE_ATTRIBUTES
+  no_permission:
+    id: BARRIER
+    name: "&6&lVIP Ouro"
+    lore:
+      - '&cEste kit é exclusivo para quem'
+      - '&ctem este nível de VIP.'
+      - '&7Veja os níveis no Discord, canal vips.'
+  cooldown:
+    id: GOLD_INGOT
+    name: "&6&lVIP Ouro"
+    lore:
+      - '&cEspere &7%time%'
+      - '&cpara pegar este kit novamente.'
+    item_flags:
+      - HIDE_ATTRIBUTES
+actions:
+  claim:
+    1:
+      action: "playsound: BLOCK_NOTE_BLOCK_PLING;10;2"
+    2:
+      action: "message: &aVocê pegou o kit &6&lVIP Ouro"
+  error:
+    1:
+      action: "playsound: BLOCK_NOTE_BLOCK_PLING;10;0.1"

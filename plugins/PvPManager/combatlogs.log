@@ -1,0 +1,9 @@
+This file logs every player that disconnected during combat
+You can disable the logging in the config file
+
+[2026/10/23 19:03:44] andreBDO tried to escape combat! (8.714s left) | In combat with: [brenobatata] | World:world, X:-203.45, Y:66.00, Z:79.12
+[2026/10/23 19:04:46] brenobatata tried to escape combat! (7.248s left) | In combat with: [andreBDO] | World:world, X:-1.21, Y:94.00, Z:29.83
+[2026/10/25 18:09:23] yWhitee tried to escape combat! (14.935s left) | In combat with: [.pimpolhomac] | World:world, X:-781.49, Y:63.06, Z:1373.67
+[2026/10/25 22:13:02] Osaka_Syndicate tried to escape combat! (9.251s left) | In combat with: [andreBDO] | World:world, X:-723.10, Y:69.00, Z:1440.34
+[2026/10/26 13:13:44] .pimpolhomac tried to escape combat! (14.730s left) | In combat with: [hharlem] | World:world, X:-458.30, Y:64.00, Z:6.08
+[2026/10/26 17:20:09] Osaka_Syndicate tried to escape combat! (13.594s left) | In combat with: [andreBDO] | World:world, X:259.10, Y:141.00, Z:-1953.82

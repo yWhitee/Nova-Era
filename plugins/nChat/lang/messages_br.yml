@@ -1,0 +1,79 @@
+####################################################################################################
+# +----------------------------------------------------------------------------------------------+ #
+# |                                          ___ _           _                                   | #
+# |                                  _ __   / __\ |__   __ _| |_                                 | #
+# |                                 | '_ \ / /  | '_ \ / _` | __|                                | #
+# |                                 | | | / /___| | | | (_| | |_                                 | #
+# |                                 |_| |_\____/|_| |_|\__,_|\__|                                | #
+# |                                                                                              | #
+# |                             Um plugin de chat simples e otimizado.                           | #
+# |                                                                                              | #
+# |                                © 2026 - Powered by nickuc.com                                | #
+# |                                                                                              | #
+# |                                                                                              | #
+# |  Novas opções não são adicionadas automaticamente neste arquivo. Valores padrões são usados  | #
+# |  caso uma opção não seja encontrada.                                                         | #
+# +----------------------------------------------------------------------------------------------+ #
+####################################################################################################
+
+channel-chat-insufficient-permission: "&cDesculpe, mas você não tem permissão &e({0}) &cpara falar neste canal."
+channel-chat-insufficient-funds: "&cDesculpe, mas você não possui saldo suficiente &2$&f{0} &cpara enviar uma mensagem neste canal."
+channel-chat-insufficient-min-funds: "&cDesculpe, mas você não possui o saldo mínimo suficiente &2$&f{0} &cpara enviar uma mensagem neste canal."
+channel-chat-delay-message: "&cVocê deve aguardar {0}s para mandar outra mensagem."
+channel-chat-message-cost: "&eVocê gastou &2$&f{0} &epara enviar esta mensagem."
+channel-command-usage: "&cUso: {0} <mensagem>"
+channel-already-exists: "&cO canal desejado já existe. Você pode editá-lo, usando /{0} canal <nome do canal>"
+channel-no-exists: "&cO canal desejado não existe. Você pode criar um usando /{0} criarcanal <nome do canal>"
+channel-create-successful: "&aO canal &f{0} &afoi criado com sucesso. Para editá-lo, utilize o comando &f'/{1} canal {0}'&a."
+channel-delete: "&cO canal &f{0} &cfoi apagado com sucesso."
+channel-focus: "&aVocê focou no canal {0}."
+channel-remove-focus: "&cVocê desfocou do canal {0}."
+channel-settings-menu-title: "&8Configurações do Canal"
+channel-mention-actionbar: "&a{0} mencionou você no chat {1}."
+message-is-empty: "&cVocê não pode enviar uma mensagem vazia!"
+mute-channel: "&cVocê não pode falar no chat enquanto o canal estiver mutado."
+disabled-channel: "&cVocê não pode falar no chat enquanto o canal estiver desativado."
+mute-tell-own: "&cVocê não pode conversar com outra pessoa enquanto seu tell está desativado."
+mute-tell-other: "&cDesculpe, mas o jogador {0} está com seu tell desativado."
+mute-tell-ignore: "&cDesculpe, mas o jogador {0} ignorou as mensagens privadas enviadas por você."
+mute-tell-sender-is-target: "&cVocê não pode ignorar as mensagens privadas de você mesmo."
+tell-command-usage: "&cUso: /{0} <player> [mensagem]"
+tell-sender-is-target: "&cVocê não pode enviar mensagens privadas para você mesmo."
+tell-locked: "&aMensagens privadas travadas com o jogador {1}.\n&aPara destravar, utilize o comando '/{0} {1}' novamente."
+tell-unlocked: "&cMensagens privadas destravadas com o jogador {0}."
+tell-unlocked-disconnected: "&cMensagens privadas destravadas com {0}, pois o jogador se desconectou."
+ignore-enabled: "&cVocê desativou as mensagens do jogador {0}."
+ignore-disabled: "&aVocê ativou as mensagens do jogador {0}."
+ignore-admin: "&cVocê não pode ignorar as mensagens de um administrador."
+reply-command-usage: "&cUso: /{0} [mensagem]"
+no-reply-available: "&cVocê não possui ninguém para responder."
+player-is-offline: "&cDesculpe, mas o jogador desejado está offline."
+player-is-not-authenticated: "&cDesculpe, mas o jogador desejado ainda não terminou sua autenticação."
+no-hears-you: "&cNinguém próximo para ouvir sua mensagem."
+censored-message: "&cVocê não tem permissão para enviar o trecho &f{0} &cno chat."
+console-command-unavailable: "&cComando indisponível para o console."
+nchat-command-help-usage: "&7Utilize '/{0} help' para listar os comandos."
+nchat-command-unknown-command-usage: "&cSub-comando inexistente. Utilize '/{0} help' para listar os comandos."
+nchat-command-no-permission: "&cDesculpe, mas você não tem permissão para executar este comando."
+nchat-command-command-usage: "&cUso: /{0} {1} <nome do canal>"
+nchat-reload-message: "&aConfiguração foi recarregada com sucesso."
+censor-warn-staff:
+  - ''
+  - ' &6O jogador &f{sender} &6possivelmente enviou'
+  - ' &6uma mensagem proibida no canal &f"{channel}"&6.'
+  - ''
+  - ' &7Trecho detectado: &f"{section}"'
+  - ' &7Mensagem: &f"{message}&r&f".'
+  - ''
+  - ' [&cAplicar punição]'
+  - ''
+mass-censor-warn-staff:
+  - ''
+  - ' &6Muitos jogadores &8(&f{sender_count}&8) &6possivelmente enviaram'
+  - ' &6mensagens proibidas no canal &f"{channel}"&6.'
+  - ''
+  - ' &7Trecho detectado: &f"{section}"'
+  - ' &7Mensagem: &f"{message}&r&f".'
+  - ''
+  - ' [&cAplicar punição em massa]'
+  - ''

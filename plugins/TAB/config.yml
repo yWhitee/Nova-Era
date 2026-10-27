@@ -1,0 +1,246 @@
+
+# ==========================================
+# BRASIL: NOVA ERA
+# TAB - NEZNAMY
+# ==========================================
+
+header-footer:
+  enabled: true
+  designs:
+    default:
+      header:
+        - ""
+        - "<#009739>&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</#009739>"
+        - "<gradient:#009739:#FFDF00:#FFFFFF><bold>BRASIL: NOVA ERA</bold></gradient>"
+        - "&7Uma nova história começa aqui."
+        - ""
+        - "&fBem-vindo, <#FFDF00>%player%</#FFDF00>!"
+        - "&7Jogadores online: <#009739>%online%</#009739>"
+        - ""
+      footer:
+        - ""
+        - "&7Seu mundo. Sua história. Sua Nova Era."
+        - "&fPing: <#009739>%ping%ms</#009739>"
+        - "&fPlayers online: <#FFDF00>%staffonline%</#FFDF00>"
+        - ""
+        - "<#009739>&m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</#009739>"
+        - "&7BRASIL: NOVA ERA &8| &4SEMI-ANARQUIA"
+        - ""
+
+tablist-name-formatting:
+  enabled: true
+  disable-condition: '%world%=disabledworld'
+
+scoreboard-teams:
+  enabled: true
+  enable-collision: true
+  invisible-nametags: false
+  sorting-types:
+    - "GROUPS:dono,dev,vipplusplus,viplus,vip,default"
+    - "PLACEHOLDER_A_TO_Z:%player%"
+  case-sensitive-sorting: false
+  can-see-friendly-invisibles: false
+  disable-condition: '%world%=disabledworld'
+
+playerlist-objective:
+  enabled: true
+  value: "%ping%"
+  fancy-value: "&7Ping: %ping%ms"
+  title: "BRASIL: NOVA ERA"
+  render-type: INTEGER
+  disable-condition: '%world%=disabledworld'
+
+belowname-objective:
+  enabled: false
+  value: "%health%"
+  fancy-value: "&c%health%"
+  fancy-value-default: "NPC"
+  title: "&cVida"
+  disable-condition: '%world%=disabledworld'
+  view-distance: 10
+
+prevent-spectator-effect:
+  enabled: false
+
+bossbar:
+  enabled: false
+  toggle-command: /bossbar
+  remember-toggle-choice: false
+  hidden-by-default: false
+  bars:
+    ServerInfo:
+      style: "PROGRESS"
+      color: "GREEN"
+      progress: "100"
+      text: "&aBRASIL: NOVA ERA &8| &fROLEPLAY"
+
+scoreboard:
+  enabled: false
+  toggle-command: /sb
+  remember-toggle-choice: false
+  hidden-by-default: false
+  delay-on-join-milliseconds: 0
+  scoreboards:
+    scoreboard:
+      title: "<gradient:#009739:#FFDF00><bold>BRASIL: NOVA ERA</bold></gradient>"
+      lines:
+        - "&7%date%"
+        - ""
+        - "&fInformações"
+        - "&7Jogadores: &a%online%"
+        - "&7Equipe online: &e%staffonline%"
+        - ""
+        - "&fSeu personagem"
+        - "&7Nome: &a%player%"
+        - "&7Grupo: &e%group%"
+        - "&7Ping: &a%ping%ms"
+        - ""
+        - "&7Brasil: Nova Era"
+
+layout:
+  enabled: false
+  direction: COLUMNS
+  default-skin: mineskin:37e93c8e12cd426cb28fce31969e0674
+  enable-remaining-players-text: true
+  remaining-players-text: '... e mais %s jogadores'
+  empty-slot-ping-value: 1000
+  layouts:
+    default:
+      slot-count: 80
+      fixed-slots:
+        - '1|&aBRASIL:'
+        - '2|&eNOVA ERA'
+        - '3|&8&m----------------'
+        - '5|&fJogador:'
+        - '6|&a%player%'
+        - '8|&fGrupo:'
+        - '9|&e%group%'
+        - '11|&fOnline:'
+        - '12|&a%online%'
+      groups:
+        staff:
+          display-condition: permission:tab.staff
+          slots:
+            - 21-30
+        players:
+          slots:
+            - 31-80
+
+ping-spoof:
+  enabled: false
+  value: 0
+
+global-playerlist:
+  enabled: false
+  display-others-as-spectators: false
+  display-vanished-players-as-spectators: true
+  isolate-unlisted-servers: false
+  update-latency: false
+  spy-servers:
+    - spyserver1
+    - spyserver2
+  server-groups:
+    lobbies:
+      - lobby1
+      - lobby2
+    group2:
+      - server1
+      - server2
+
+placeholders:
+  date-format: "dd/MM/yyyy"
+  time-format: "HH:mm:ss"
+  time-offset: 0
+  register-tab-expansion: false
+  locale: pt-BR
+
+placeholder-output-replacements:
+  "%essentials_vanished%":
+    "yes": "&7| Invisível"
+    "no": ""
+
+conditions:
+  nick:
+    conditions:
+      - "%player%=%essentials_nickname%"
+    true: "%player%"
+    false: "~%essentials_nickname%"
+
+placeholder-refresh-intervals:
+  default-refresh-interval: 500
+  "%server_uptime%": 1000
+  "%server_tps_1_colored%": 1000
+  "%server_unique_joins%": 5000
+  "%player_health%": 200
+  "%player_ping%": 1000
+  "%vault_prefix%": 1000
+  "%rel_factionsuuid_relation_color%": 1000
+
+assign-groups-by-permissions: false
+
+primary-group-finding-list:
+  - dono
+  - dev
+  - vipplusplus
+  - vipplus
+  - vip
+  - default
+
+permission-refresh-interval: 1000
+
+debug: false
+
+mysql:
+  enabled: false
+  host: 127.0.0.1
+  port: 3306
+  database: tab
+  username: user
+  password: password
+  useSSL: true
+
+proxy-support:
+  enabled: false
+  channel-name-suffix: "custom"
+  type: PLUGIN
+  plugin:
+    name: RedisBungee
+  redis:
+    url: 'redis://:password@localhost:6379/0'
+  rabbitmq:
+    exchange: 'plugin'
+    url: 'amqp://guest:guest@localhost:5672/%2F'
+
+components:
+  minimessage-support: true
+  disable-shadow-for-heads: true
+
+config-version: 7
+
+# ==========================================
+# CONFIGURAÇÕES BUKKIT / SPIGOT / PAPER
+# ==========================================
+
+per-world-playerlist:
+  enabled: false
+  allow-bypass-permission: false
+  ignore-effect-in-worlds:
+    - ignoredworld
+    - build
+  shared-playerlist-world-groups:
+    lobby:
+      - lobby1
+      - lobby2
+    minigames:
+      - paintball
+      - bedwars
+
+compensate-for-packetevents-bug: false
+
+# ==========================================
+# CONFIGURAÇÕES DE PROXY
+# ==========================================
+
+use-bukkit-permissions-manager: false
+
+use-online-uuid-in-tablist: true

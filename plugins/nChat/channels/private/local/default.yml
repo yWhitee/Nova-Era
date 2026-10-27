@@ -1,0 +1,35 @@
+permission: nchat.tell
+delay-message: 3.0
+loggable: false
+prevent-capslock: true
+format:
+  sender: '&8[{channel}&8] &8Mensagem para {prefix} {target}&6: {message}'
+  target: '&8[{channel}&8] &8Mensagem de {prefix} {sender}&6: {message}'
+  spy: '&c[SPY] &8Mensagem de {sender} para {target}&6: {message}'
+balance:
+  min-balance: 0.0
+  message-cost: 0.0
+tags:
+  channel:
+    hover: '&cMensagem privada'
+    suggest: ''
+  sender:
+    hover: '&7Jogador: &f{sender}'
+    suggest: '/tell {sender} '
+  target:
+    hover: '&7Jogador: &f{target}'
+    suggest: '/tell {target} '
+  message:
+    hover: '&7Data de envio: &f{data}'
+    suggest: ''
+  sender_displayname:
+    hover: '&7Jogador: &f{sender}'
+    suggest: ''
+  target_displayname:
+    hover: '&7Jogador: &f{target}'
+    suggest: ''
+  custom_tag:
+    text: '&b[NickUC.com]'
+    hover: '&7Clique aqui para acessar o website.'
+    url: https://www.nickuc.com
+    permission: nchat.tag.admin

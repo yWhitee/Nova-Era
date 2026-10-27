@@ -1,0 +1,95 @@
+{
+  "stats": {
+    "minecraft:mined": {
+      "minecraft:tall_grass": 1,
+      "minecraft:dirt": 11,
+      "minecraft:spruce_log": 12,
+      "minecraft:birch_leaves": 2,
+      "minecraft:coal_ore": 4,
+      "minecraft:grass_block": 3,
+      "minecraft:spruce_leaves": 3,
+      "minecraft:short_grass": 1,
+      "minecraft:dirt_path": 3,
+      "minecraft:furnace": 1,
+      "minecraft:birch_log": 7,
+      "minecraft:copper_ore": 10,
+      "minecraft:iron_ore": 2,
+      "minecraft:stone": 23
+    },
+    "minecraft:dropped": {
+      "minecraft:stick": 4
+    },
+    "minecraft:crafted": {
+      "minecraft:torch": 16,
+      "minecraft:furnace": 1,
+      "minecraft:stick": 8,
+      "minecraft:copper_boots": 1,
+      "minecraft:wooden_pickaxe": 1,
+      "minecraft:copper_leggings": 1,
+      "minecraft:copper_helmet": 1,
+      "minecraft:copper_chestplate": 1,
+      "minecraft:copper_ingot": 24,
+      "minecraft:spruce_planks": 48,
+      "minecraft:stone_pickaxe": 1,
+      "minecraft:crafting_table": 1
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 7,
+      "minecraft:time_since_rest": 20,
+      "minecraft:walk_one_cm": 131150,
+      "minecraft:leave_game": 6,
+      "minecraft:walk_under_water_one_cm": 675,
+      "minecraft:damage_taken": 2765,
+      "minecraft:play_time": 59907,
+      "minecraft:damage_dealt": 4,
+      "minecraft:jump": 194,
+      "minecraft:time_since_death": 0,
+      "minecraft:drop": 1,
+      "minecraft:interact_with_furnace": 6,
+      "minecraft:sprint_one_cm": 43681,
+      "minecraft:open_chest": 2,
+      "minecraft:fall_one_cm": 9469,
+      "minecraft:total_world_time": 59907,
+      "minecraft:fly_one_cm": 2050,
+      "minecraft:walk_on_water_one_cm": 2254,
+      "minecraft:crouch_one_cm": 34118,
+      "minecraft:sneak_time": 6904,
+      "minecraft:deaths": 8
+    },
+    "minecraft:used": {
+      "minecraft:copper_boots": 1,
+      "minecraft:crafting_table": 1,
+      "minecraft:copper_leggings": 1,
+      "minecraft:wooden_pickaxe": 17,
+      "minecraft:furnace": 1,
+      "minecraft:copper_chestplate": 1,
+      "minecraft:egg": 1,
+      "minecraft:copper_helmet": 1,
+      "minecraft:torch": 1,
+      "minecraft:stone_pickaxe": 24,
+      "minecraft:dirt": 4,
+      "minecraft:cobblestone": 5
+    },
+    "minecraft:picked_up": {
+      "minecraft:egg": 1,
+      "minecraft:spruce_planks": 18,
+      "minecraft:dirt": 14,
+      "minecraft:spruce_sapling": 1,
+      "minecraft:stick": 4,
+      "minecraft:cobblestone": 23,
+      "minecraft:raw_copper": 42,
+      "minecraft:raw_iron": 2,
+      "minecraft:spruce_log": 12,
+      "minecraft:coal": 4,
+      "minecraft:copper_ingot": 4,
+      "minecraft:furnace": 1,
+      "minecraft:birch_log": 7
+    },
+    "minecraft:killed_by": {
+      "minecraft:skeleton": 2,
+      "minecraft:warden": 3,
+      "minecraft:zombie": 2
+    }
+  },
+  "DataVersion": 5023
+}

@@ -1,0 +1,463 @@
+
+inventories:
+  main_inventory:
+    slots: 54
+    title: "&4&lKits Normais"
+    0;1;7;8;9;17;36;44;45;46;52;53:
+      item:
+        id: "BLACK_STAINED_GLASS_PANE"
+        name: " "
+    20:
+      type: "kit: iron"
+    22:
+      item:
+        id: "COMPASS"
+        name: "&3&lViajar"
+        lore:
+          - "&7Escolha para onde ir no mundo"
+      open_inventory: viajar_inventory
+    24:
+      type: "kit: food"
+    49:
+      item:
+        id: "DIAMOND_BLOCK"
+        name: "&d&lKits VIP"
+        lore:
+          - "&7Kits de mineração para quem apoia o servidor"
+      open_inventory: vip_kits_inventory
+
+  vip_kits_inventory:
+    slots: 54
+    title: "&5&lKits VIP"
+    0;1;7;8;9;17;36;44;45;46;52;53:
+      item:
+        id: "PURPLE_STAINED_GLASS_PANE"
+        name: " "
+    19:
+      type: "kit: vip_ferro"
+    21:
+      type: "kit: vip_ouro"
+    23:
+      type: "kit: vip_diamante"
+    25:
+      type: "kit: vip_netherite"
+    49:
+      item:
+        id: "IRON_BLOCK"
+        name: "&e&lKits Normais"
+      open_inventory: main_inventory
+
+  viajar_inventory:
+    slots: 54
+    title: "&3&lViajar"
+    0;1;7;8;9;17;36;44;45;46;52;53:
+      item:
+        id: "CYAN_STAINED_GLASS_PANE"
+        name: " "
+    20:
+      item:
+        id: "GRASS_BLOCK"
+        name: "&a&lAventura"
+        lore:
+          - "&7Lugar aleatório até 1000 blocos do spawn"
+          - "&7O destino principal para começar"
+      click_actions:
+      - "playsound: ENTITY_ENDERMAN_TELEPORT;10;1"
+      - "console_command: execute as %player% at %player% run function bne:tp_aventura"
+    22:
+      item:
+        id: "OAK_SAPLING"
+        name: "&b&lPerto"
+        lore:
+          - "&7Lugar aleatório até 400 blocos do spawn"
+      click_actions:
+      - "playsound: ENTITY_ENDERMAN_TELEPORT;10;1"
+      - "console_command: execute as %player% at %player% run function bne:tp_perto"
+    24:
+      item:
+        id: "COMPASS"
+        name: "&5&lExpedição"
+        lore:
+          - "&7Lugar aleatório até 3500 blocos"
+          - "&7Mais longe e menos explorado"
+      click_actions:
+      - "playsound: ENTITY_ENDERMAN_TELEPORT;10;1"
+      - "console_command: execute as %player% at %player% run function bne:tp_longe"
+    31:
+      item:
+        id: "BELL"
+        name: "&6&lCidade Antiga"
+        lore:
+          - "&7Spawn antigo, com zona segura"
+      click_actions:
+      - "playsound: ENTITY_ENDERMAN_TELEPORT;10;1"
+      - "console_command: tp %player% -471.5 69 72.5 -90 12"
+    49:
+      item:
+        id: "IRON_BLOCK"
+        name: "&e&lKits Normais"
+      open_inventory: main_inventory
+
+  admin_inventory:
+    slots: 54
+    title: "&c&lPainel Admin"
+    0-8;9;17;18;26;27;35;36;44;45-48;50-53:
+      item:
+        id: "RED_STAINED_GLASS_PANE"
+        name: " "
+    10:
+      item:
+        id: "GRASS_BLOCK"
+        name: "&a&lModo Criativo"
+        lore:
+          - "&7/gamemode creative"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: gamemode creative"
+    11:
+      item:
+        id: "IRON_PICKAXE"
+        name: "&e&lSobrevivência"
+        lore:
+          - "&7/gamemode survival"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: gamemode survival"
+    12:
+      item:
+        id: "ENDER_EYE"
+        name: "&b&lEspectador"
+        lore:
+          - "&7/gamemode spectator"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: gamemode spectator"
+    13:
+      item:
+        id: "GLASS"
+        name: "&f&lVanish"
+        lore:
+          - "&7Ficar invisível para os jogadores"
+          - "&7/vanish"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: vanish"
+    14:
+      item:
+        id: "GOLDEN_APPLE"
+        name: "&c&lCurar"
+        lore:
+          - "&7Vida cheia agora"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: effect give @s minecraft:instant_health 1 10 true"
+    15:
+      item:
+        id: "COOKED_BEEF"
+        name: "&6&lAlimentar"
+        lore:
+          - "&7Fome cheia agora"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: effect give @s minecraft:saturation 1 20 true"
+    16:
+      item:
+        id: "COMPASS"
+        name: "&9&lIr ao spawn"
+        lore:
+          - "&7/spawn"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: spawn"
+    19:
+      item:
+        id: "SUNFLOWER"
+        name: "&e&lDia"
+        lore:
+          - "&7/time set day"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: time set day"
+    20:
+      item:
+        id: "CLOCK"
+        name: "&8&lNoite"
+        lore:
+          - "&7/time set night"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: time set night"
+    21:
+      item:
+        id: "WATER_BUCKET"
+        name: "&b&lClima limpo"
+        lore:
+          - "&7/weather clear"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: weather clear"
+    22:
+      item:
+        id: "REPEATER"
+        name: "&a&lTPS (desempenho)"
+        lore:
+          - "&7/tps"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: tps"
+    23:
+      item:
+        id: "SPYGLASS"
+        name: "&d&lSpark: resumo"
+        lore:
+          - "&7/spark tps"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: spark tps"
+    24:
+      item:
+        id: "HOPPER"
+        name: "&c&lLimpar itens do chão"
+        lore:
+          - "&cApaga todos os itens soltos no mundo"
+          - "&7/kill @e[type=item]"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: kill @e[type=item]"
+    25:
+      item:
+        id: "PAPER"
+        name: "&f&lJogadores online"
+        lore:
+          - "&7/list"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: list"
+    28:
+      item:
+        id: "IRON_SWORD"
+        name: "&4&lModeração"
+        lore:
+          - "&7Kick, ban, teleporte e mais"
+      open_inventory: admin_moderacao_inventory
+    29:
+      item:
+        id: "BOOK"
+        name: "&a&lRecarregar kits"
+        lore:
+          - "&7/kit reload"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: kit reload"
+    30:
+      item:
+        id: "PLAYER_HEAD"
+        name: "&6&lAções em jogadores"
+        lore:
+          - "&7Curar, alimentar e mais, em outros jogadores"
+      open_inventory: admin_jogadores_inventory
+    49:
+      item:
+        id: "BARRIER"
+        name: "&c&lFechar"
+      click_actions:
+      - "close_inventory"
+
+  admin_jogadores_inventory:
+    slots: 54
+    title: "&6&lAções em jogadores"
+    0-8;9;17;18;26;27;35;36;44;45-48;50-53:
+      item:
+        id: "ORANGE_STAINED_GLASS_PANE"
+        name: " "
+    10:
+      item:
+        id: "GOLDEN_APPLE"
+        name: "&c&lCurar"
+        lore:
+          - "&7Vale para o jogador mais próximo (até 12 blocos)"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: effect give @a[distance=0.01..12] minecraft:instant_health 1 5 true"
+    11:
+      item:
+        id: "COOKED_BEEF"
+        name: "&6&lAlimentar"
+        lore:
+          - "&7Vale para o jogador mais próximo (até 12 blocos)"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: effect give @a[distance=0.01..12] minecraft:saturation 1 20 true"
+    12:
+      item:
+        id: "WATER_BUCKET"
+        name: "&b&lApagar fogo"
+        lore:
+          - "&7Vale para o jogador mais próximo (até 12 blocos)"
+          - "&7Dá 60 s de resistência ao fogo"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: effect give @a[distance=0.01..12] minecraft:fire_resistance 60 0 true"
+    13:
+      item:
+        id: "MILK_BUCKET"
+        name: "&f&lLimpar efeitos"
+        lore:
+          - "&7Vale para o jogador mais próximo (até 12 blocos)"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: effect clear @a[distance=0.01..12]"
+    14:
+      item:
+        id: "PACKED_ICE"
+        name: "&3&lCongelar 30s"
+        lore:
+          - "&7Vale para o jogador mais próximo (até 12 blocos)"
+          - "&7Lentidão total e sem pulo"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: effect give @a[distance=0.01..12] minecraft:slowness 30 255 true"
+      - "player_command: effect give @a[distance=0.01..12] minecraft:jump_boost 30 128 true"
+    15:
+      item:
+        id: "ENDER_PEARL"
+        name: "&9&lMandar ao lobby"
+        lore:
+          - "&7Vale para o jogador mais próximo (até 12 blocos)"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: tp @a[distance=0.01..12] 0.5 251 14.5 180 0"
+    19:
+      item:
+        id: "ENCHANTED_GOLDEN_APPLE"
+        name: "&c&lCurar todos online"
+        lore:
+          - "&7Todos os jogadores, inclusive você"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: effect give @a minecraft:instant_health 1 5 true"
+    20:
+      item:
+        id: "BREAD"
+        name: "&6&lAlimentar todos online"
+        lore:
+          - "&7Todos os jogadores, inclusive você"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: effect give @a minecraft:saturation 1 20 true"
+    49:
+      item:
+        id: "ARROW"
+        name: "&e&lVoltar ao Painel Admin"
+      open_inventory: admin_inventory
+
+  admin_moderacao_inventory:
+    slots: 54
+    title: "&4&lModeração"
+    0-8;9;17;18;26;27;35;36;44;45-48;50-53:
+      item:
+        id: "BLACK_STAINED_GLASS_PANE"
+        name: " "
+    10:
+      item:
+        id: "LEATHER_BOOTS"
+        name: "&e&lExpulsar (kick)"
+        lore:
+          - "&7Clique para ver o comando"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "message: &eUse: &f/kick <nick> <motivo>"
+      - "close_inventory"
+    11:
+      item:
+        id: "IRON_AXE"
+        name: "&c&lBanir"
+        lore:
+          - "&7Clique para ver o comando"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "message: &eUse: &f/ban <nick> <motivo>"
+      - "close_inventory"
+    12:
+      item:
+        id: "LIME_DYE"
+        name: "&a&lDesbanir"
+        lore:
+          - "&7Clique para ver o comando"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "message: &eUse: &f/pardon <nick>"
+      - "close_inventory"
+    13:
+      item:
+        id: "ENDER_PEARL"
+        name: "&b&lIr até o jogador"
+        lore:
+          - "&7Clique para ver o comando"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "message: &eUse: &f/tp <nick>"
+      - "close_inventory"
+    14:
+      item:
+        id: "ENDER_CHEST"
+        name: "&5&lPuxar jogador até você"
+        lore:
+          - "&7Clique para ver o comando"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "message: &eUse: &f/tp <nick> <seu nick>"
+      - "close_inventory"
+    15:
+      item:
+        id: "CHEST"
+        name: "&6&lDar item"
+        lore:
+          - "&7Clique para ver o comando"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "message: &eUse: &f/give <nick> <item> <quantidade>"
+      - "close_inventory"
+    16:
+      item:
+        id: "PAPER"
+        name: "&f&lLista de banidos"
+        lore:
+          - "&7/banlist players"
+      click_actions:
+      - "playsound: UI_BUTTON_CLICK;10;1"
+      - "player_command: banlist players"
+    19:
+      item:
+        id: "ARROW"
+        name: "&7&lVoltar"
+      open_inventory: previous
+
+  preview_inventory:
+    slots: 54
+    title: "&4&lPré-visualização do Kit"
+    45:
+      item:
+        id: "ARROW"
+        name: "&7Voltar"
+      open_inventory: previous
+
+  buy_requirements_inventory:
+    slots: 27
+    title: "&4&lRequisitos para Comprar"
+    13:
+      item:
+        id: "BOOK"
+        name: "&c&lRequisitos"
+        lore:
+          - "%kit_requirements_message%"
+    10:
+      item:
+        id: "RED_STAINED_GLASS_PANE"
+        name: "&cVoltar"
+      type: buy_no
+    16:
+      item:
+        id: "GREEN_STAINED_GLASS_PANE"
+        name: "&aComprar"
+      type: buy_yes

@@ -1,0 +1,10 @@
+name: andreBDO
+kits:
+  food:
+    cooldown: 1793034079379
+    one_time: false
+    bought: false
+  iron:
+    cooldown: 1793041280357
+    one_time: false
+    bought: false

@@ -1,0 +1,125 @@
+
+cooldown: 86400
+permission_required: true
+
+items:
+  1:
+    id: DIAMOND_SWORD
+    amount: 1
+    enchants:
+      - "SHARPNESS;4"
+      - "UNBREAKING;3"
+      - "FIRE_ASPECT;2"
+  2:
+    id: DIAMOND_PICKAXE
+    amount: 1
+    enchants:
+      - "EFFICIENCY;4"
+      - "UNBREAKING;3"
+      - "FORTUNE;2"
+  3:
+    id: DIAMOND_AXE
+    amount: 1
+    enchants:
+      - "EFFICIENCY;4"
+      - "UNBREAKING;3"
+  4:
+    id: DIAMOND_HELMET
+    amount: 1
+    enchants:
+      - "PROTECTION;3"
+      - "UNBREAKING;3"
+  5:
+    id: DIAMOND_CHESTPLATE
+    amount: 1
+    enchants:
+      - "PROTECTION;3"
+      - "UNBREAKING;3"
+  6:
+    id: DIAMOND_LEGGINGS
+    amount: 1
+    enchants:
+      - "PROTECTION;3"
+      - "UNBREAKING;3"
+  7:
+    id: DIAMOND_BOOTS
+    amount: 1
+    enchants:
+      - "PROTECTION;3"
+      - "UNBREAKING;3"
+      - "FEATHER_FALLING;4"
+  8:
+    id: GOLDEN_APPLE
+    amount: 24
+  9:
+    id: ENDER_PEARL
+    amount: 16
+  10:
+    id: TOTEM_OF_UNDYING
+    amount: 3
+  11:
+    id: TRIDENT
+    amount: 1
+    enchants:
+      - "LOYALTY;3"
+      - "UNBREAKING;3"
+  12:
+    id: OAK_PLANKS
+    amount: 64
+  13:
+    id: OBSIDIAN
+    amount: 32
+  14:
+    id: EXPERIENCE_BOTTLE
+    amount: 32
+  15:
+    id: GOLDEN_CARROT
+    amount: 32
+  16:
+    id: ENCHANTED_BOOK
+    amount: 1
+    enchants:
+      - "MENDING;1"
+  17:
+    id: ENCHANTED_BOOK
+    amount: 1
+    enchants:
+      - "UNBREAKING;3"
+  18:
+    id: ARROW
+    amount: 64
+
+display:
+  default:
+    id: DIAMOND
+    name: "&6&lVIP++"
+    amount: 1
+    lore:
+      - "&7Kit exclusivo VIP++"
+      - ""
+      - "&fEquipamentos de diamante encantados"
+      - "&fTridente e itens para PvP"
+      - "&fTotens e recursos de sobrevivência"
+      - ""
+      - "&7Cooldown: &f24 horas"
+      - ""
+      - "&aClique para resgatar!"
+  no_permission:
+    id: BARRIER
+    name: "&c&lVIP++"
+    amount: 1
+    lore:
+      - "&cVocê precisa do VIP++."
+  cooldown:
+    id: CLOCK
+    name: "&e&lVIP++"
+    amount: 1
+    lore:
+      - "&cAguarde: &f%time%"
+      - "&7para resgatar novamente."
+
+actions:
+  claim:
+    1:
+      action: "playsound: UI_TOAST_CHALLENGE_COMPLETE;10;1"
+
