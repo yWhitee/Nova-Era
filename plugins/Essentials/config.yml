@@ -875,11 +875,11 @@ command-costs:
 # Set this to a currency symbol you want to use.
 # Remember, if you want to use special characters in this document, such as accented letters,
 # you MUST save the file as UTF-8, not ANSI.
-currency-symbol: '$'
+currency-symbol: ' shards'
 
 # Enable this to make the currency symbol appear at the end of the amount rather than at the start.
 # For example, the euro symbol typically appears after the current amount.
-currency-symbol-suffix: false
+currency-symbol-suffix: true
 
 # Set the maximum amount of money a player can have.
 # Note: Extremely large numbers may have unintended consequences.
@@ -888,7 +888,7 @@ max-money: 10000000000000
 # Set the minimum amount of money a player can have (must be greater than the negative value of max-money).
 # Setting this to 0 will disable overdrafts/loans completely.
 # Players need 'essentials.eco.loan' permission to have a negative balance.
-min-money: -10000
+min-money: 0
 
 # Enable this to log all interactions with buy/sell/trade signs and the sell command.
 economy-log-enabled: false
@@ -926,7 +926,7 @@ baltop-entry-limit: -1
 # The format of currency, excluding symbols. For symbol configuration, see 'currency-symbol-format-locale' below.
 #
 # "#,##0.00" is how the majority of countries display currency.
-#currency-format: "#,##0.00"
+currency-format: "#,##0.##"
 
 # Format currency symbols. Some locales use , and . interchangeably.
 # Certain formats may not display correctly in-game due to Minecraft font rendering issues.
@@ -937,7 +937,7 @@ baltop-entry-limit: -1
 #  - fr-CH for 1'234,50
 #
 # Or see https://www.iban.com/country-codes for all Alpha-2 country codes.
-#currency-symbol-format-locale: en-US
+currency-symbol-format-locale: pt-BR
 
 # Allow players to receive multipliers for items sold with /sell or the sell sign.
 # You can set the default multiplier using the 'default' rank below.

@@ -17,7 +17,36 @@ aliases:
   - kit open admin_inventory $sender
   mod:
   - kit open admin_moderacao_inventory $sender
-  moneytop:
-  - essentials:baltop $1-
+  shards:
+  - essentials:balance $1-
+  shardspay:
+  - essentials:pay $1-
+  shardstop:
+  - essentials:balancetop $1-
+  shardsedit:
+  - essentials:eco $1-
+  sell:
+  - essentials:sell amethyst_shard $1-
+  shardsell:
+  - essentials:sell amethyst_shard $1-
+  shardssell:
+  - essentials:sell amethyst_shard $1-
+  balance: []
+  bal: []
+  ebal: []
+  ebalance: []
+  money: []
+  emoney: []
+  balancetop: []
+  ebalancetop: []
+  baltop: []
+  ebaltop: []
+  pay: []
+  epay: []
+  eco: []
+  eeco: []
+  economy: []
+  eeconomy: []
+  esell: []
   icanhasbukkit:
   - version $1-

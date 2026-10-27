@@ -62,10 +62,11 @@ groups:
     - menu
     - rtp
     - huskhomes:rtp
-    - money
-    - bal
-    - balance
-    - pay
-    - moneytop
+    - shards
+    - shardspay
+    - shardstop
+    - sell
+    - shardsell
+    - shardssell
     subcommands:
     - help about
