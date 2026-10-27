@@ -180,10 +180,12 @@ assign-groups-by-permissions: false
 
 primary-group-finding-list:
   - dono
-  - dev
-  - vipplusplus
-  - vipplus
-  - vip
+  - admin
+  - mod
+  - vipnetherite
+  - vipdiamante
+  - vipouro
+  - vipferro
   - default
 
 permission-refresh-interval: 1000
