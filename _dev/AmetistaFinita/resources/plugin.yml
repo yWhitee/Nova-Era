@@ -1,0 +1,6 @@
+name: AmetistaFinita
+version: 1.0.0
+main: br.novaera.ametista.AmetistaFinita
+api-version: '1.20'
+author: yWhitee
+description: Impede que a ametista brotante gere brotos novos.
