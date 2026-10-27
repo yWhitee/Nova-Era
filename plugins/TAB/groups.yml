@@ -4,11 +4,11 @@ dono:
   tagprefix: "&#23FF0C&lD&#5FFC0F&lO&#9CF913&lN&#D8F616&lO &8┃ &f"
 
 admin:
-  tabprefix: "&#FF0000[Admin] &f"
+  tabprefix: "&#FF0000&lADMIN &8┃ &f"
   tagprefix: "&#FF0000[Admin] &f"
 
 mod:
-  tabprefix: "&#55FF55[Mod] &f"
+  tabprefix: "&#55FF55&lMOD &8┃ &f"
   tagprefix: "&#55FF55[Mod] &f"
 
 _DEFAULT_:
