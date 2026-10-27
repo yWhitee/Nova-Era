@@ -233,16 +233,16 @@ inventories:
           - "&7Os comandos que você pode usar"
       click_actions:
       - "playsound: UI_BUTTON_CLICK;10;1"
-      - 'console_command: tellraw %player% [{"text":"Comandos: ","color":"gold"},{"text":"/spawn /rtp /home /homes /sethome /delhome /tpa /tpahere /tpaccept /tpdeny /msg /g /l /kits","color":"white"}]'
+      - 'console_command: tellraw %player% [{"text":"Comandos: ","color":"gold"},{"text":"/spawn /rtp /home /homes /sethome /delhome /tpa /tpahere /tpaccept /tpdeny /msg /g /l /kits /shop /shards /shardspay /shardstop /sell","color":"white"}]'
     29:
       item:
-        id: "EMERALD"
-        name: "&a&lLoja"
+        id: "AMETHYST_SHARD"
+        name: "&5&lLoja"
         lore:
-          - "&7Em breve: VIPs e itens"
+          - "&7Compre e venda itens com outros jogadores"
       click_actions:
       - "playsound: UI_BUTTON_CLICK;10;1"
-      - 'console_command: tellraw %player% [{"text":"Loja: ","color":"gold"},{"text":"em breve, com VIPs e itens. Acompanhe no Discord!","color":"white"}]'
+      - 'player_command: shop'
     49:
       item:
         id: "BARRIER"
