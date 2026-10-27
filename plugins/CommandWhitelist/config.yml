@@ -38,7 +38,6 @@ groups:
     - home
     - sethome
     - delhome
-    - bounty
     - tpahere
     - tpignore
     - tpno

@@ -207,15 +207,6 @@ inventories:
       click_actions:
       - "playsound: UI_BUTTON_CLICK;10;1"
       - 'console_command: tellraw %player% [{"text":"Chat: ","color":"gold"},{"text":"/g mensagem ","color":"white"},{"text":"fala com todos, ","color":"gray"},{"text":"/l mensagem ","color":"white"},{"text":"só com quem está perto, ","color":"gray"},{"text":"/msg <jogador> mensagem ","color":"white"},{"text":"é privado.","color":"gray"}]'
-    23:
-      item:
-        id: "GOLD_INGOT"
-        name: "&6&lRecompensas"
-        lore:
-          - "&7Veja e coloque recompensas por jogadores"
-      click_actions:
-      - "playsound: UI_BUTTON_CLICK;10;1"
-      - 'player_command: bounty'
     24:
       item:
         id: "BOOK"
@@ -242,7 +233,7 @@ inventories:
           - "&7Os comandos que você pode usar"
       click_actions:
       - "playsound: UI_BUTTON_CLICK;10;1"
-      - 'console_command: tellraw %player% [{"text":"Comandos: ","color":"gold"},{"text":"/spawn /rtp /home /homes /sethome /delhome /tpa /tpahere /tpaccept /tpdeny /msg /g /l /bounty /kits","color":"white"}]'
+      - 'console_command: tellraw %player% [{"text":"Comandos: ","color":"gold"},{"text":"/spawn /rtp /home /homes /sethome /delhome /tpa /tpahere /tpaccept /tpdeny /msg /g /l /kits","color":"white"}]'
     29:
       item:
         id: "EMERALD"

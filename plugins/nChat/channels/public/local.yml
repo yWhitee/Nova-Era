@@ -23,10 +23,7 @@ tags:
     hover: '&7Canal: &f{channel}'
     suggest: '/{channel_cmd} '
   sender:
-    hover: |-
-      &7Clique aqui para mencionar este jogador.
-
-      &7Coins: &2$&f{balance}
+    hover: '&7Clique aqui para mencionar este jogador.'
     suggest: '/{channel_cmd} {sender}, '
   message:
     hover: '&7Data de envio: &f{data}'

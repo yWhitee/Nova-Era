@@ -14,9 +14,9 @@ format:
   spy: '&c[SPY] &8[{channel_logo}] {prefix} &f{sender}&8: &f{message}'
 
 balance:
-  min-balance: 1000.0
-  message-cost: 50.0
-  show-message-cost: true
+  min-balance: 0.0
+  message-cost: 0.0
+  show-message-cost: false
 
 proxy:
   enabled: false
@@ -28,10 +28,7 @@ tags:
     suggest: '/{channel_cmd} '
 
   sender:
-    hover: |-
-      &7Clique aqui para mencionar este jogador.
-
-      &7Coins: &2$&f{balance}
+    hover: '&7Clique aqui para mencionar este jogador.'
     suggest: '/{channel_cmd} {sender}, '
 
   message:
